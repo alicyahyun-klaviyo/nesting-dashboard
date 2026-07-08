@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nesting Assistance Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#0f1216; --panel:#161b22; --panel2:#1c232c; --border:#2a3138;
+    --text:#e6edf3; --muted:#8b949e; --accent:#6ea8fe; --accent2:#7ee2b8;
+    --warn:#f2c14e; --danger:#ff6b6b;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--text);
+  }
+  header{
+    padding:28px 32px 18px; border-bottom:1px solid var(--border);
+    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:12px;
+  }
+  header h1{margin:0; font-size:22px; font-weight:600;}
+  header p{margin:4px 0 0; color:var(--muted); font-size:13px;}
+  #meta{font-size:12px; color:var(--muted); text-align:right;}
+  main{padding:24px 32px 60px; max-width:1280px; margin:0 auto;}
+  .kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-bottom:24px;}
+  .kpi{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:16px 18px;}
+  .kpi .val{font-size:26px; font-weight:700;}
+  .kpi .lbl{font-size:12px; color:var(--muted); margin-top:4px; text-transform:uppercase; letter-spacing:.04em;}
+  .grid{display:grid; grid-template-columns:2fr 1fr; gap:16px; margin-bottom:16px;}
+  @media (max-width:900px){.grid{grid-template-columns:1fr;}}
+  .panel{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:18px 20px;}
+  .panel h2{margin:0 0 14px; font-size:15px; font-weight:600;}
+  .panel h2 span{color:var(--muted); font-weight:400; font-size:12px;}
+  table{width:100%; border-collapse:collapse; font-size:13px;}
+  th{text-align:left; color:var(--muted); font-weight:500; font-size:11px; text-transform:uppercase; letter-spacing:.03em; padding:6px 10px; border-bottom:1px solid var(--border);}
+  td{padding:8px 10px; border-bottom:1px solid var(--border); vertical-align:top;}
+  tr:last-child td{border-bottom:none;}
+  a{color:var(--accent); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .pill{display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; background:var(--panel2); border:1px solid var(--border); white-space:nowrap;}
+  .userbar-row{display:flex; align-items:center; gap:8px; padding:6px 0;}
+  .userbar-name{width:150px; font-size:12px; flex-shrink:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .userbar-track{flex:1; background:var(--panel2); border-radius:4px; height:10px; overflow:hidden;}
+  .userbar-fill{background:var(--accent); height:100%; border-radius:4px;}
+  .userbar-count{width:28px; text-align:right; font-size:12px; color:var(--muted);}
+  #recent-wrap{max-height:520px; overflow:auto;}
+  .tldr-cell{max-width:420px;}
+  input#search{
+    background:var(--panel2); border:1px solid var(--border); color:var(--text);
+    padding:8px 12px; border-radius:8px; font-size:13px; width:260px; margin-bottom:12px;
+  }
+  input#search::placeholder{color:var(--muted);}
+  #controls{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
+  footer{text-align:center; color:var(--muted); font-size:12px; padding:20px; border-top:1px solid var(--border);}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Nesting Assistance Workflow Dashboard</h1>
+    <p>#cnx-manila-nesting-support &middot; usage, question types &amp; who's asking</p>
+  </div>
+  <div id="meta">Loading…</div>
+</header>
+
+<main>
+  <div class="kpis" id="kpis"></div>
+
+  <div class="grid">
+    <div class="panel">
+      <h2>Daily usage <span>tickets logged per day</span></h2>
+      <canvas id="dailyChart" height="110"></canvas>
+    </div>
+    <div class="panel">
+      <h2>Question type <span>by category</span></h2>
+      <canvas id="categoryChart" height="220"></canvas>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div class="panel">
+      <h2>Recent tickets <span id="recent-count"></span></h2>
+      <div id="controls">
+        <input id="search" type="text" placeholder="Search by name, category, or keyword…" />
+      </div>
+      <div id="recent-wrap">
+        <table>
+          <thead>
+            <tr><th>Date</th><th>User</th><th>Category</th><th>TLDR</th><th>Ticket</th></tr>
+          </thead>
+          <tbody id="recent-body"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="panel">
+      <h2>Who's using it <span>total tickets by person</span></h2>
+      <div id="userbars"></div>
+    </div>
+  </div>
+</main>
+
+<footer>Auto-refreshes daily at 10am (weekdays) from Slack &middot; data generated <span id="gen-at"></span></footer>
+
+<script>
+async function load() {
+  const res = await fetch('data.json?_=' + Date.now());
+  const data = await res.json();
+  render(data);
+}
+
+function render(data) {
+  document.getElementById('meta').textContent =
+    `${data.date_range.start} → ${data.date_range.end}`;
+  document.getElementById('gen-at').textContent =
+    new Date(data.generated_at).toLocaleString();
+
+  // KPIs
+  const days = Object.keys(data.daily_counts);
+  const activeDays = Object.values(data.daily_counts).filter(v => v > 0);
+  const avgPerActiveDay = activeDays.length ? (data.total_count / activeDays.length) : 0;
+  const topUser = Object.entries(data.user_counts).sort((a,b)=>b[1]-a[1])[0];
+  const topCategory = Object.entries(data.category_counts).sort((a,b)=>b[1]-a[1])[0];
+
+  const kpis = [
+    { val: data.total_count, lbl: 'Total tickets' },
+    { val: Object.keys(data.user_counts).length, lbl: 'Agents using it' },
+    { val: avgPerActiveDay.toFixed(1), lbl: 'Avg / active day' },
+    { val: topUser ? topUser[0] : '—', lbl: `Top user (${topUser ? topUser[1] : 0})` },
+    { val: topCategory ? topCategory[0] : '—', lbl: `Top category (${topCategory ? topCategory[1] : 0})` },
+  ];
+  document.getElementById('kpis').innerHTML = kpis.map(k =>
+    `<div class="kpi"><div class="val">${k.val}</div><div class="lbl">${k.lbl}</div></div>`
+  ).join('');
+
+  // Daily chart
+  new Chart(document.getElementById('dailyChart'), {
+    type: 'bar',
+    data: {
+      labels: days,
+      datasets: [{
+        label: 'Tickets',
+        data: Object.values(data.daily_counts),
+        backgroundColor: '#6ea8fe',
+        borderRadius: 4,
+        maxBarThickness: 28
+      }]
+    },
+    options: {
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: '#8b949e', maxRotation: 60, minRotation: 60 }, grid: { color: '#2a3138' } },
+        y: { beginAtZero: true, ticks: { color: '#8b949e' }, grid: { color: '#2a3138' } }
+      }
+    }
+  });
+
+  // Category chart
+  const catEntries = Object.entries(data.category_counts).sort((a,b)=>b[1]-a[1]);
+  const palette = ['#6ea8fe','#7ee2b8','#f2c14e','#ff6b6b','#c792ea','#4dd0e1','#ffab91','#a5d6a7','#f48fb1','#90a4ae','#dce775'];
+  new Chart(document.getElementById('categoryChart'), {
+    type: 'doughnut',
+    data: {
+      labels: catEntries.map(e => e[0]),
+      datasets: [{ data: catEntries.map(e => e[1]), backgroundColor: palette }]
+    },
+    options: {
+      plugins: { legend: { position: 'bottom', labels: { color: '#e6edf3', boxWidth: 12, font: { size: 11 } } } }
+    }
+  });
+
+  // User bars
+  const maxUser = Math.max(...Object.values(data.user_counts));
+  const userHtml = Object.entries(data.user_counts).sort((a,b)=>b[1]-a[1]).map(([name,count]) => `
+    <div class="userbar-row">
+      <div class="userbar-name" title="${name}">${name}</div>
+      <div class="userbar-track"><div class="userbar-fill" style="width:${(count/maxUser*100).toFixed(0)}%"></div></div>
+      <div class="userbar-count">${count}</div>
+    </div>`).join('');
+  document.getElementById('userbars').innerHTML = userHtml;
+
+  // Recent tickets table
+  const records = [...data.records].sort((a,b) => (a.date+a.time < b.date+b.time ? 1 : -1));
+  document.getElementById('recent-count').innerHTML = `<span>${records.length} total</span>`;
+
+  function renderTable(list) {
+    document.getElementById('recent-body').innerHTML = list.map(r => `
+      <tr>
+        <td>${r.date}</td>
+        <td>${r.user}</td>
+        <td><span class="pill">${r.category}</span></td>
+        <td class="tldr-cell">${r.tldr}</td>
+        <td><a href="${r.ticket_url}" target="_blank" rel="noopener">Ticket ↗</a></td>
+      </tr>`).join('');
+  }
+  renderTable(records);
+
+  document.getElementById('search').addEventListener('input', (e) => {
+    const q = e.target.value.toLowerCase();
+    renderTable(records.filter(r =>
+      r.user.toLowerCase().includes(q) ||
+      r.category.toLowerCase().includes(q) ||
+      r.tldr.toLowerCase().includes(q)
+    ));
+  });
+}
+
+load().catch(err => {
+  document.getElementById('meta').textContent = 'Failed to load data.json';
+  console.error(err);
+});
+</script>
+</body>
+</html>
