@@ -45,14 +45,6 @@
   .userbar-track{flex:1; background:var(--panel2); border-radius:4px; height:10px; overflow:hidden;}
   .userbar-fill{background:var(--accent); height:100%; border-radius:4px;}
   .userbar-count{width:28px; text-align:right; font-size:12px; color:var(--muted);}
-  #recent-wrap{max-height:520px; overflow:auto;}
-  .tldr-cell{max-width:420px;}
-  input#search{
-    background:var(--panel2); border:1px solid var(--border); color:var(--text);
-    padding:8px 12px; border-radius:8px; font-size:13px; width:260px; margin-bottom:12px;
-  }
-  input#search::placeholder{color:var(--muted);}
-  #controls{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;}
   footer{text-align:center; color:var(--muted); font-size:12px; padding:20px; border-top:1px solid var(--border);}
 </style>
 </head>
@@ -80,25 +72,9 @@
     </div>
   </div>
 
-  <div class="grid">
-    <div class="panel">
-      <h2>Recent tickets <span id="recent-count"></span></h2>
-      <div id="controls">
-        <input id="search" type="text" placeholder="Search by name, category, or keyword…" />
-      </div>
-      <div id="recent-wrap">
-        <table>
-          <thead>
-            <tr><th>Date</th><th>User</th><th>Category</th><th>TLDR</th><th>Ticket</th></tr>
-          </thead>
-          <tbody id="recent-body"></tbody>
-        </table>
-      </div>
-    </div>
-    <div class="panel">
-      <h2>Who's using it <span>total tickets by person</span></h2>
-      <div id="userbars"></div>
-    </div>
+  <div class="panel" style="margin-bottom:16px;">
+    <h2>Who's using it <span>total tickets by person</span></h2>
+    <div id="userbars"></div>
   </div>
 </main>
 
@@ -180,31 +156,6 @@ function render(data) {
       <div class="userbar-count">${count}</div>
     </div>`).join('');
   document.getElementById('userbars').innerHTML = userHtml;
-
-  // Recent tickets table
-  const records = [...data.records].sort((a,b) => (a.date+a.time < b.date+b.time ? 1 : -1));
-  document.getElementById('recent-count').innerHTML = `<span>${records.length} total</span>`;
-
-  function renderTable(list) {
-    document.getElementById('recent-body').innerHTML = list.map(r => `
-      <tr>
-        <td>${r.date}</td>
-        <td>${r.user}</td>
-        <td><span class="pill">${r.category}</span></td>
-        <td class="tldr-cell">${r.tldr}</td>
-        <td><a href="${r.ticket_url}" target="_blank" rel="noopener">Ticket ↗</a></td>
-      </tr>`).join('');
-  }
-  renderTable(records);
-
-  document.getElementById('search').addEventListener('input', (e) => {
-    const q = e.target.value.toLowerCase();
-    renderTable(records.filter(r =>
-      r.user.toLowerCase().includes(q) ||
-      r.category.toLowerCase().includes(q) ||
-      r.tldr.toLowerCase().includes(q)
-    ));
-  });
 }
 
 load().catch(err => {
