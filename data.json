@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-07T12:28:37.730998+00:00",
+  "generated_at": "2026-07-09T00:05:18.658756+00:00",
   "date_range": {
     "start": "2026-06-22",
-    "end": "2026-07-07"
+    "end": "2026-07-08"
   },
-  "last_message_ts": "1783410807.290309",
-  "total_count": 372,
+  "last_message_ts": "1783500861.352399",
+  "total_count": 415,
   "daily_counts": {
     "2026-06-22": 30,
     "2026-06-23": 34,
@@ -22,31 +22,32 @@
     "2026-07-04": 0,
     "2026-07-05": 0,
     "2026-07-06": 27,
-    "2026-07-07": 32
+    "2026-07-07": 32,
+    "2026-07-08": 43
   },
   "user_counts": {
-    "Steve Bryann Rivas": 18,
-    "Kent Jayson Reteo": 24,
-    "Emmanuel Diaz": 19,
-    "Erwin Eleuterio": 14,
-    "Kheid Anthony Villanueva": 17,
-    "Ronald Flores": 21,
-    "Jhon Cyruz Tiama": 19,
-    "Rafael Joseph Rayco": 22,
-    "Threa Kate Quirong": 22,
-    "Ni\u00f1a Jenica Custodio": 18,
-    "Caizen Dee Kabigting": 16,
-    "Angel Joy Alcantara": 19,
-    "Frank Gehry Ruz": 13,
-    "Rajeev Mueller Guimbao": 17,
+    "Kheid Anthony Villanueva": 20,
+    "Erwin Eleuterio": 15,
+    "Dan Albryne Capua": 25,
+    "Kent Jayson Reteo": 27,
+    "Angel Joy Alcantara": 22,
+    "Jhon Cyruz Tiama": 23,
+    "Threa Kate Quirong": 23,
+    "Ronald Flores": 23,
+    "Emmanuel Diaz": 22,
+    "Lou Elaizha Mars Maguddayao": 9,
+    "Frank Gehry Ruz": 15,
+    "Steve Bryann Rivas": 19,
+    "Joshua Pelayo": 21,
+    "Niña Jenica Custodio": 20,
+    "Ronel Albo": 9,
+    "Caizen Dee Kabigting": 19,
+    "Rafael Joseph Rayco": 25,
+    "Rajeev Mueller Guimbao": 19,
+    "John Patrick Lopez": 13,
     "Arjay Galit": 6,
     "Justine Angelo Rivera": 12,
     "Fairy May Tebia": 8,
-    "Joshua Pelayo": 18,
-    "Dan Albryne Capua": 21,
-    "John Patrick Lopez": 12,
-    "Ronel Albo": 8,
-    "Lou Elaizha Mars Maguddayao": 8,
     "Myc Leorie Valera": 6,
     "Ryan Baking": 10,
     "Luis Gabriel De taza": 1,
@@ -55,19 +56,406 @@
     "Al Christian Bolo": 1
   },
   "category_counts": {
-    "Campaigns": 38,
-    "Integrations": 57,
-    "Segmentation & Lists": 38,
-    "Forms & Sign-ups": 30,
-    "Flows": 50,
-    "SMS & Consent": 17,
-    "Other": 66,
-    "Profiles & Subscription Status": 39,
-    "Billing & Account": 17,
-    "Deliverability & Bounces": 13,
-    "Domains & DNS": 7
+    "Billing & Account": 18,
+    "Flows": 60,
+    "Segmentation & Lists": 44,
+    "Profiles & Subscription Status": 46,
+    "Forms & Sign-ups": 33,
+    "Campaigns": 44,
+    "Integrations": 62,
+    "Deliverability & Bounces": 15,
+    "SMS & Consent": 19,
+    "Domains & DNS": 8,
+    "Other": 66
   },
   "records": [
+    {
+      "date": "2026-07-08",
+      "time": "18:54:21",
+      "user": "Kheid Anthony Villanueva",
+      "user_id": "U0B2N7VK3E0",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4059973",
+      "tldr": "The customer reports that their email sending limit has been capped at 3,600 for several months, despite their growing store database. They are requesting an explanation for this limit, how to view it, and how to change it",
+      "category": "Billing & Account"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "18:29:45",
+      "user": "Kheid Anthony Villanueva",
+      "user_id": "U0B2N7VK3E0",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4059853",
+      "tldr": "Cs is having trouble with their profiles not filtering through their flow. They suspect the 'Trigger Filters' may be incorrect and request a review to ensure the flow is working properly to promote other sizes within the same photo frame range.",
+      "category": "Flows"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "17:53:09",
+      "user": "Erwin Eleuterio",
+      "user_id": "U0B2JRS3LR0",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4058238",
+      "tldr": "The customer is asking why their abandoned shopping cart has no activity while their WooCommerce captured almost $400 in recovered shopping cart activity",
+      "category": "Flows"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "17:50:31",
+      "user": "Dan Albryne Capua",
+      "user_id": "U0B2DBZV091",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4059777",
+      "tldr": "Customer camwe back wanting to have a custom report on a Segment.",
+      "category": "Segmentation & Lists"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "17:31:55",
+      "user": "Kent Jayson Reteo",
+      "user_id": "U0B2G0XE5B7",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4061403",
+      "tldr": "CX has concerns regarding the profiles that were skipped on the said particular campaign. Upon their further inspection, there are profiles that are seemingly duplicated.",
+      "category": "Profiles & Subscription Status"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "17:11:12",
+      "user": "Angel Joy Alcantara",
+      "user_id": "U0B2PD7FEKE",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060559",
+      "tldr": "Customer wants to know if their emdedded form works fine",
+      "category": "Forms & Sign-ups"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "16:45:23",
+      "user": "Dan Albryne Capua",
+      "user_id": "U0B2DBZV091",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060649",
+      "tldr": "Customer asked us to review the flow where they incorporated a dynamic link that redirects users back to the product they were viewing.",
+      "category": "Flows"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "16:31:39",
+      "user": "Jhon Cyruz Tiama",
+      "user_id": "U0B2KBLUE3U",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4061272",
+      "tldr": "Customers popup form is not working consistently, customer stated that sometime the popup form shows up, but sometimes it doesn't using incognito.",
+      "category": "Forms & Sign-ups"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "16:29:38",
+      "user": "Threa Kate Quirong",
+      "user_id": "U0B6LUWECJX",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4061325",
+      "tldr": "Customer emailed in as the sent campaign shows empty on customer's pov. Even in viewing the campaign on our end, it shows as empty",
+      "category": "Campaigns"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "16:29:16",
+      "user": "Ronald Flores",
+      "user_id": "U0B23BZNBHV",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060557",
+      "tldr": "The customer reports that while the 'Engaged Website Visitor - Last 30 Days' segment is syncing correctly to Google Ads, two other audiences—'90 Day Engaged - Email' and 'OpenSend List'—have not received API uploads since June 30 and May 11, respectively, despite audience sync being active.",
+      "category": "Integrations"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "16:26:38",
+      "user": "Emmanuel Diaz",
+      "user_id": "U0B2GPYFV2S",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4059799",
+      "tldr": "cx would like to know exactly what information she need to ask the website developer regarding catalogues/products, etc.",
+      "category": "Integrations"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "16:20:52",
+      "user": "Angel Joy Alcantara",
+      "user_id": "U0B2PD7FEKE",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060437",
+      "tldr": "Customer wants an explanation for the segment size decline",
+      "category": "Segmentation & Lists"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "15:03:49",
+      "user": "Lou Elaizha Mars Maguddayao",
+      "user_id": "U0B2CDYGCCT",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060458",
+      "tldr": "Utilizing Buttons.",
+      "category": "Campaigns"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "15:01:53",
+      "user": "Frank Gehry Ruz",
+      "user_id": "U0B23U23U0P",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060819",
+      "tldr": "cx having issue some text boxes to have white on it but normal in preview",
+      "category": "Campaigns"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "14:56:06",
+      "user": "Steve Bryann Rivas",
+      "user_id": "U0B2D1BGQDR",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060464",
+      "tldr": "Customers want to confirm if the",
+      "category": "Flows"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "14:51:52",
+      "user": "Kent Jayson Reteo",
+      "user_id": "U0B2G0XE5B7",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4061064",
+      "tldr": "** too lengthy to post on this one, will send on the thread **",
+      "category": "Flows"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "14:28:43",
+      "user": "Joshua Pelayo",
+      "user_id": "U0B2N9DA6GL",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060893",
+      "tldr": "The profile is experiencing a soft bounce, which is why the customer did not receive the email.",
+      "category": "Deliverability & Bounces"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "14:20:35",
+      "user": "Niña Jenica Custodio",
+      "user_id": "U0B2DBDEX0B",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060289",
+      "tldr": "They receive complain today from one of their customer and one employee that their email were addressed to the wrong name \"Melissa Montañez\".",
+      "category": "Profiles & Subscription Status"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "14:19:32",
+      "user": "Frank Gehry Ruz",
+      "user_id": "U0B23U23U0P",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4059836",
+      "tldr": "cx want to check where to find a profiles location",
+      "category": "Profiles & Subscription Status"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "14:11:52",
+      "user": "Dan Albryne Capua",
+      "user_id": "U0B2DBZV091",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060839",
+      "tldr": "The customer made a mistake importing an incorrect list into their Klaviyo account. The overall audience count is still higher that expected, and appears that the contacts are still showing on the total audience number. With this, the customer asks on how they weill be able to know where these profiles are being counted.",
+      "category": "Segmentation & Lists"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "13:33:19",
+      "user": "Ronel Albo",
+      "user_id": "U0B2H128B4N",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060552",
+      "tldr": "Customer look back at the activity log and they see an activity where they updated the attached global setting to make sure more than one form does not appear at one time. However, multiple times this checkbox gets unchecked_as per customer) and theu can't figure out how or why.",
+      "category": "Forms & Sign-ups"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "13:30:06",
+      "user": "Caizen Dee Kabigting",
+      "user_id": "U0B23BVFD8F",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060629",
+      "tldr": "Ticket Summary The customer reported an unusual spike in spam detected by Google Postmaster Tools on June 30, which does not correspond to any campaigns sent that day. They have reviewed their campaigns and flows but could not identify the cause. The customer is requesting assistance to investigate the root cause or guidance on how to address the issue.",
+      "category": "Deliverability & Bounces"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "13:24:43",
+      "user": "Rafael Joseph Rayco",
+      "user_id": "U0B2N8U7NEQ",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060993",
+      "tldr": "The customer's transactional SMS message has been \"Under review\" since June 26",
+      "category": "SMS & Consent"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "13:24:39",
+      "user": "Rajeev Mueller Guimbao",
+      "user_id": "U0B2GUD5UES",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060393",
+      "tldr": "Customer needs help in creating a segment of profiles that placed an order from 1 of the campaigns mentioned in the email.",
+      "category": "Segmentation & Lists"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "13:20:45",
+      "user": "Kheid Anthony Villanueva",
+      "user_id": "U0B2N7VK3E0",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4059893",
+      "tldr": "The customer is setting up a Shopify website and currently uses Shopify POS in their Paris store. They want to know if it's possible to opt-in customer profiles directly from the POS to trigger marketing flows. Additionally, they ask if, for customers who haven't opted in, a flow can be triggered to request a Google Maps review and offer newsletter opt-in via email, including whether clicking the email can count as opt-in.",
+      "category": "Flows"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "12:57:21",
+      "user": "Jhon Cyruz Tiama",
+      "user_id": "U0B2KBLUE3U",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4061013",
+      "tldr": "Customer encountering multiple anonymous profile creating using thier app SKD",
+      "category": "Profiles & Subscription Status"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "12:55:36",
+      "user": "Emmanuel Diaz",
+      "user_id": "U0B2GPYFV2S",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060778",
+      "tldr": "inquiries about \"user suppressed\" and \"sms sending limit usage\"",
+      "category": "Profiles & Subscription Status"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "12:48:30",
+      "user": "Kent Jayson Reteo",
+      "user_id": "U0B2G0XE5B7",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060452",
+      "tldr": "CX used to have a segment where Klaviyo would tell them which of the customers could get SMS and was not a landline. However that segment was deleted.",
+      "category": "Segmentation & Lists"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "12:38:58",
+      "user": "Joshua Pelayo",
+      "user_id": "U0B2N9DA6GL",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4061053",
+      "tldr": "Customer asking why font on their email and font on preview or on edit are different.",
+      "category": "Campaigns"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "12:33:18",
+      "user": "Caizen Dee Kabigting",
+      "user_id": "U0B23BVFD8F",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060838",
+      "tldr": "The customer requests a raw data report for the past year showing counts and details from profiles, specifically focusing on how users found the company recently. They want profile information including source, campaign, content, medium, term, and referrer fields",
+      "category": "Profiles & Subscription Status"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "12:30:43",
+      "user": "Rafael Joseph Rayco",
+      "user_id": "U0B2N8U7NEQ",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060359",
+      "tldr": "The customer is just asking clarity regarding the configuration of their Abandoned Cart flow.",
+      "category": "Flows"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "12:27:09",
+      "user": "Angel Joy Alcantara",
+      "user_id": "U0B2PD7FEKE",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4058839",
+      "tldr": "The users in the customer's account who are subscribed in messaging and whatsapp marketing are all tagged as \"Never subscribed\" even tho there's no activity or action about them unsubscribing",
+      "category": "SMS & Consent"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "11:57:51",
+      "user": "Rafael Joseph Rayco",
+      "user_id": "U0B2N8U7NEQ",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060619",
+      "tldr": "The customer is requesting help on suppressing profiles since they are now only emailing a little over 20k profiles.",
+      "category": "Profiles & Subscription Status"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "11:55:42",
+      "user": "Jhon Cyruz Tiama",
+      "user_id": "U0B2KBLUE3U",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4037880",
+      "tldr": "Issue with \"Restock alert\" button in back to stock flow, it works perfectly fine for some items that's out of stock. However, the button is not showing directly on the Variant that's not available.",
+      "category": "Flows"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "11:54:16",
+      "user": "Caizen Dee Kabigting",
+      "user_id": "U0B23BVFD8F",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060706",
+      "tldr": "The customer need to include PDF attachments in their email",
+      "category": "Campaigns"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "11:52:37",
+      "user": "Dan Albryne Capua",
+      "user_id": "U0B2DBZV091",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4059777",
+      "tldr": "Customer cannot locate the option to create a Segment Performance Report.",
+      "category": "Segmentation & Lists"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "11:46:55",
+      "user": "Niña Jenica Custodio",
+      "user_id": "U0B2DBDEX0B",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060469",
+      "tldr": "They were unable to create Google Ads Audience from their Klaviyo List. When attempting to do it, they receive a following error message: \"Unable to create audience. Check your Google Ads permissions and re-autheticate\". They already verified the following setup requirements on their end: Admin permission and Klaviyo Manger Link. Already checked that it was successfully linked but they said it's still failing. They want to know if there's an issue on Klaviyo side that's preventing the audience write action.",
+      "category": "Integrations"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "11:46:40",
+      "user": "Rajeev Mueller Guimbao",
+      "user_id": "U0B2GUD5UES",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4061108",
+      "tldr": "Cx is receiving a domain warning \"Soon, messages that do not have branded sending domain will either be skipped within a Flow or held as a draft Campaign. Update your sender domain to avoid interruption.\" the domain name on the account is verified, however it is not activated yet.",
+      "category": "Domains & DNS"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "11:46:26",
+      "user": "Ronald Flores",
+      "user_id": "U0B23BZNBHV",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060774",
+      "tldr": "The customer is inquiring about the lack of attributed revenue from their flows over the past 7 days and is asking if everything is set up correctly.",
+      "category": "Flows"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "11:43:12",
+      "user": "Joshua Pelayo",
+      "user_id": "U0B2N9DA6GL",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4061115",
+      "tldr": "Customer asking why image on their campaign are displaying as broken image and showing the same when creating a new campaign. Customer did not provide the specific campaign",
+      "category": "Campaigns"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "11:42:27",
+      "user": "John Patrick Lopez",
+      "user_id": "U0B3DJ8620Y",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4059839",
+      "tldr": "Customer experiencing issue wherein customers who purchase on the website are not receiving an automated review prompt email.  As per customer there are 20 orders were completed however only 3 people received review prompt emails and the status of these 3 are \"Never subscribed\"  They already asked their platform provider about this \"Experlogix\" aka. Aphix and inform them that it was on us.",
+      "category": "Integrations"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "11:40:15",
+      "user": "Emmanuel Diaz",
+      "user_id": "U0B2GPYFV2S",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060924",
+      "tldr": "customer kept receiving \"Back in stock report\" non stop.",
+      "category": "Flows"
+    },
+    {
+      "date": "2026-07-08",
+      "time": "11:03:24",
+      "user": "Jhon Cyruz Tiama",
+      "user_id": "U0B2KBLUE3U",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4058888",
+      "tldr": "customer having trouble installing Klaviyo to Bigcommerce, and it's only stuck \"Cancel installation\"",
+      "category": "Integrations"
+    },
     {
       "date": "2026-07-07",
       "time": "17:53:27",
@@ -188,7 +576,7 @@
     {
       "date": "2026-07-07",
       "time": "13:59:10",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4058920",
       "tldr": "The customer want their footer's website address url to start with www. instead of http:/www. They want to remove it from the start of the website button.",
@@ -245,13 +633,13 @@
       "user": "Caizen Dee Kabigting",
       "user_id": "U0B23BVFD8F",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4058612",
-      "tldr": "after integrating the Basecomp the customer three test flows using Klaviyo Product Blocks are working inconsistently: some events include the required product data, such as the product image, while others do not. Additionally, the Product Blocks in your Added to Cart and Started Checkout flows currently aren\u2019t receiving the trigger data needed to populate product information.",
+      "tldr": "after integrating the Basecomp the customer three test flows using Klaviyo Product Blocks are working inconsistently: some events include the required product data, such as the product image, while others do not. Additionally, the Product Blocks in your Added to Cart and Started Checkout flows currently aren’t receiving the trigger data needed to populate product information.",
       "category": "Integrations"
     },
     {
       "date": "2026-07-07",
       "time": "13:01:54",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4053466",
       "tldr": "They already reinstalled the app as per Shopify support recommendation. since they had it checked on their end and it seems good but they're still having issue with the email address added to their Shopify page and it's not syncing.",
@@ -422,7 +810,7 @@
     {
       "date": "2026-07-06",
       "time": "12:57:06",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4056275",
       "tldr": "They recently created a flow to include texts (SMS message). The customer said they're seeing texts is not included. They received permission for all of the phone number in their full email list. But they're confuse why most of the profile goes 'No' in their conditional split.",
@@ -647,7 +1035,7 @@
     {
       "date": "2026-07-03",
       "time": "16:25:41",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4054043",
       "tldr": "Customer is having a concern regarding integrating Shopify and Klaviyo. Customer already reach out to Shopify support and they confirmed that root cause might comes on Klaviyo's end since their plan in Shopify and password protection is enabled.",
@@ -719,7 +1107,7 @@
     {
       "date": "2026-07-03",
       "time": "14:24:59",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4054043",
       "tldr": "Customer need help with integrating their Shopify with Klaviyo.",
@@ -800,7 +1188,7 @@
     {
       "date": "2026-07-03",
       "time": "13:02:42",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4053466",
       "tldr": "Customer kept getting an error message when trying to sync Shopify after they update preferences in Klaviyo and selecting the \"Update Settings\".  They already tried different browser, re-installing, go on incognito mode some other AI suggestion but none of them works. Their emails from shopify page is not syncing into their Klaviyo list.",
@@ -1070,7 +1458,7 @@
     {
       "date": "2026-07-02",
       "time": "12:45:09",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4051586",
       "tldr": "Customer want to change their universal footer's 'unsubscribe' personalized text block to color black (Hex #000000)",
@@ -1142,7 +1530,7 @@
     {
       "date": "2026-07-02",
       "time": "12:03:54",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4049845",
       "tldr": "Customer know how to make sure that their new subscriber that came from import list is added to their Master list.",
@@ -1154,7 +1542,7 @@
       "user": "Kent Jayson Reteo",
       "user_id": "U0B2G0XE5B7",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4051023",
-      "tldr": "CX is now working with \"Segment\" as their middle platform to help us track when customer who click thru from a Klaviyo email complete a purchase on our online ordering page  Has concerns about the ff:  1. Creating the order event metrics with the exact names required by Segment: \u201cOrder Completed\u201d and \u201cOrdered Product.\u201d These names must match exactly for the events to track correctly in Segment.  2. Confirming that Klaviyo is properly configured to send these order events to Segment when a purchase is completed, including the customer\u2019s email address. This is important so it can match the order to the correct customer profile and campaign.",
+      "tldr": "CX is now working with \"Segment\" as their middle platform to help us track when customer who click thru from a Klaviyo email complete a purchase on our online ordering page  Has concerns about the ff:  1. Creating the order event metrics with the exact names required by Segment: “Order Completed” and “Ordered Product.” These names must match exactly for the events to track correctly in Segment.  2. Confirming that Klaviyo is properly configured to send these order events to Segment when a purchase is completed, including the customer’s email address. This is important so it can match the order to the correct customer profile and campaign.",
       "category": "Segmentation & Lists"
     },
     {
@@ -1232,7 +1620,7 @@
     {
       "date": "2026-07-01",
       "time": "18:01:02",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4049845",
       "tldr": "Customer contacted regarding one of their segment appears spammy with profiles signup on march 19 with timestamp of may 19, 2026, 8:49 AM. They want to know how to check this and how automatically add list of profile from the segment to their main list.",
@@ -1466,10 +1854,10 @@
     {
       "date": "2026-07-01",
       "time": "12:23:37",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4047705",
-      "tldr": "Customer's is having issue with their LOC profile custom property. When they add LOC doesn't equal en-ca from their segment engaged en-us (120 days), it goes down to 101,906. However, the LOC equals en-ca all segment only consist of 846. Meaning the list count should be 179,873 - 846 = 179,027.\u00a0 Also, 2 profiles receive a US email even if their custom property is set to en-ca not en-us.",
+      "tldr": "Customer's is having issue with their LOC profile custom property. When they add LOC doesn't equal en-ca from their segment engaged en-us (120 days), it goes down to 101,906. However, the LOC equals en-ca all segment only consist of 846. Meaning the list count should be 179,873 - 846 = 179,027.  Also, 2 profiles receive a US email even if their custom property is set to en-ca not en-us.",
       "category": "Segmentation & Lists"
     },
     {
@@ -1583,7 +1971,7 @@
     {
       "date": "2026-06-30",
       "time": "17:43:44",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4047705",
       "tldr": "Customer's is having issue with their LOC profile custom property. When they add LOC doesn't equal en-ca from their segment engaged en-us (120 days), it goes down to 101,906. However, the LOC equals en-ca all segment only consist of 846.  Also, 2 profiles receive a US email even if their custom property is set to en-ca not en-us.",
@@ -1817,7 +2205,7 @@
     {
       "date": "2026-06-30",
       "time": "12:33:04",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4037888",
       "tldr": "Customer is still having issue with customer's being skipped on their Abandoned Checkout flow.",
@@ -1979,7 +2367,7 @@
     {
       "date": "2026-06-29",
       "time": "14:11:11",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4045070",
       "tldr": "Customer need help with setting up custom property (boolean)",
@@ -2150,7 +2538,7 @@
     {
       "date": "2026-06-29",
       "time": "11:34:55",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4041563",
       "tldr": "Customer's TAGS (custom property) stopped working for month now.",
@@ -2258,7 +2646,7 @@
     {
       "date": "2026-06-26",
       "time": "12:29:44",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4041563",
       "tldr": "Customer still experiencing issue with their flow with \"placed order\" trigger this means that the customer that will placed an order with enter the segment. Their main problem is the customer mentioned that the TAGS stopped working for a month now until now.",
@@ -2351,7 +2739,7 @@
       "user": "Kent Jayson Reteo",
       "user_id": "U0B2G0XE5B7",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4041485",
-      "tldr": "CX mentioned that you need an AI just to export contact lists from one Klaviyo account to another. Also cx sent a feedback stating \"Your export/import feature can't even handle the simplest task\u2014not even with just the standard fields. Is that what the developers intended? An AI cleaned up the columns.\"",
+      "tldr": "CX mentioned that you need an AI just to export contact lists from one Klaviyo account to another. Also cx sent a feedback stating \"Your export/import feature can't even handle the simplest task—not even with just the standard fields. Is that what the developers intended? An AI cleaned up the columns.\"",
       "category": "Segmentation & Lists"
     },
     {
@@ -2411,7 +2799,7 @@
     {
       "date": "2026-06-25",
       "time": "14:43:35",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4039453",
       "tldr": "Customer is requesting a feature of flow that can automatically unsuppressed a profile once triggered a placed order metric. Since Hubspot also have that feature.",
@@ -2648,7 +3036,7 @@
       "user": "Erwin Eleuterio",
       "user_id": "U0B2JRS3LR0",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4037000",
-      "tldr": "The customer query is about Meta Leads Integrations which she is wondering if those leads will also be removed from the segments after 90 days when using the integration Or will they remain in the segments indefinitely once created, so she wouldn\u2019t need to manage this manually.",
+      "tldr": "The customer query is about Meta Leads Integrations which she is wondering if those leads will also be removed from the segments after 90 days when using the integration Or will they remain in the segments indefinitely once created, so she wouldn’t need to manage this manually.",
       "category": "Integrations"
     },
     {
@@ -2744,7 +3132,7 @@
     {
       "date": "2026-06-24",
       "time": "12:29:22",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4037722",
       "tldr": "Customer is having a concern with their 'Cart Started API triggered flow that's performing poorly compared to 'Add to cart' metric flow.",
@@ -3242,7 +3630,7 @@
       "user": "Ronald Flores",
       "user_id": "U0B23BZNBHV",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4033198",
-      "tldr": "No email activity is observed in Klaviyo \u2014 emails are not being triggered or sent at all.",
+      "tldr": "No email activity is observed in Klaviyo — emails are not being triggered or sent at all.",
       "category": "Other"
     },
     {
@@ -3338,7 +3726,7 @@
     {
       "date": "2026-06-22",
       "time": "12:06:59",
-      "user": "Ni\u00f1a Jenica Custodio",
+      "user": "Niña Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4033023",
       "tldr": "The customer reach out again because they'r experiencing their flow (Ready to review) not triggering due to anomaly detection in flow trigger. The customer provide their old ticket number.",
