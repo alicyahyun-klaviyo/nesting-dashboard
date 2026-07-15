@@ -172,6 +172,13 @@ function themeVar(name) {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 }
 
+// Explicit black/white for chart legend text so it's never ambiguous
+// (avoids any risk of a stale/uncomputed CSS var leaving legend text unreadable).
+function legendTextColor() {
+  const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+  return theme === 'dark' ? '#ffffff' : '#1d2129';
+}
+
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('nestingDashboardTheme', theme);
@@ -288,7 +295,7 @@ function renderCharts(data) {
           position: 'right',
           align: 'center',
           labels: {
-            color: textColor, boxWidth: 12, font: { size: 11.5 }, padding: 12,
+            color: legendTextColor(), boxWidth: 12, font: { size: 11.5 }, padding: 12,
             generateLabels: (chart) => chart.data.labels.map((label, i) => {
               const value = chart.data.datasets[0].data[i];
               const pct = ((value / catTotal) * 100).toFixed(0);
