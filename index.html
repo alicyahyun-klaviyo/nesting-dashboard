@@ -187,6 +187,12 @@ function applyTheme(theme) {
   const btn = document.getElementById('theme-toggle');
   btn.textContent = theme === 'dark' ? '☀️' : '🌙';
   btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  // Safety net: keep Chart.js's own global default text color in sync with the
+  // theme too, in case any chart/legend text isn't picking up its per-chart color.
+  if (window.Chart) {
+    Chart.defaults.color = legendTextColor();
+    Chart.defaults.borderColor = themeVar('--border') || Chart.defaults.borderColor;
+  }
   if (DATA) renderCharts(DATA);
 }
 
@@ -305,6 +311,8 @@ function renderCharts(data) {
               return {
                 text: `${label} — ${pct}% (${value})`,
                 fillStyle: chart.data.datasets[0].backgroundColor[i],
+                fontColor: legendTextColor(),
+                strokeStyle: chart.data.datasets[0].backgroundColor[i],
                 index: i
               };
             })
