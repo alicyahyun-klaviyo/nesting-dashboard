@@ -94,6 +94,10 @@
   .ticket-links a{display:inline-flex; align-items:center; gap:4px;}
   .ticket-links .disabled{color:var(--muted); cursor:default;}
   .empty-msg{color:var(--muted); font-size:13px; padding:20px 0; text-align:center;}
+  .filter-bar{display:none; align-items:center; gap:8px; font-size:12px; color:var(--muted); margin:0 0 12px;}
+  .filter-bar.show{display:flex;}
+  .filter-bar button{background:var(--panel2); border:1px solid var(--border); color:var(--text); border-radius:6px; padding:3px 10px; cursor:pointer; font-size:11.5px;}
+  .filter-bar button:hover{border-color:var(--accent); color:var(--accent);}
 </style>
 </head>
 <body>
@@ -142,6 +146,7 @@
     </div>
     <div id="modal-body">
       <div id="modal-chart-wrap"><div id="modal-chart-inner"><canvas id="modal-chart"></canvas></div></div>
+      <div id="modal-filter-bar" class="filter-bar"></div>
       <div id="modal-ticket-list"></div>
     </div>
   </div>
@@ -153,6 +158,8 @@ let dailyChartInstance = null;
 let categoryChartInstance = null;
 let modalChartInstance = null;
 let categoryLabelsInOrder = [];
+let currentAgentRecords = null;
+let currentAgentName = '';
 const CATEGORY_PALETTE = ['#6ea8fe','#7ee2b8','#f2c14e','#ff6b6b','#c792ea','#4dd0e1','#ffab91','#a5d6a7','#f48fb1','#90a4ae','#dce775'];
 
 function colorForCategory(name) {
@@ -401,6 +408,15 @@ function renderModalCategoryChart(records) {
         x: { display: false, suggestedMax: maxVal * 1.35 },
         y: { ticks: { color: textColor, font: { size: 11.5 } }, grid: { display: false } }
       },
+      onHover: (evt, elements) => {
+        evt.native.target.style.cursor = elements.length ? 'pointer' : 'default';
+      },
+      onClick: (evt, elements) => {
+        if (!elements.length) return;
+        const idx = elements[0].index;
+        const category = entries[idx][0];
+        filterAgentTicketsByCategory(category);
+      },
       plugins: {
         legend: { display: false },
         tooltip: {
@@ -417,23 +433,55 @@ function renderModalCategoryChart(records) {
   });
 }
 
-function openModal(title, sub, records, opts) {
-  document.getElementById('modal-title').textContent = title;
-  document.getElementById('modal-sub').textContent = sub;
-
-  if (opts.showCategoryChart) {
-    renderModalCategoryChart(records);
-  } else {
-    document.getElementById('modal-chart-wrap').classList.remove('show');
-    if (modalChartInstance) { modalChartInstance.destroy(); modalChartInstance = null; }
-  }
-
+function renderTicketList(records, opts) {
   const list = document.getElementById('modal-ticket-list');
   if (!records.length) {
     list.innerHTML = '<div class="empty-msg">No tickets found.</div>';
   } else {
     list.innerHTML = records.map(r => ticketItemHtml(r, opts)).join('');
   }
+}
+
+function hideAgentFilterBar() {
+  const bar = document.getElementById('modal-filter-bar');
+  bar.classList.remove('show');
+  bar.innerHTML = '';
+}
+
+function filterAgentTicketsByCategory(category) {
+  if (!currentAgentRecords) return;
+  const filtered = currentAgentRecords.filter(r => (r.category || 'Other') === category);
+  const bar = document.getElementById('modal-filter-bar');
+  bar.classList.add('show');
+  bar.innerHTML = `Showing <b>${escapeHtml(category)}</b> only (${filtered.length}) <button id="modal-clear-filter">Show all ${currentAgentRecords.length}</button>`;
+  document.getElementById('modal-clear-filter').addEventListener('click', clearAgentFilter);
+  renderTicketList(filtered, { showCategory: true });
+  document.getElementById('modal-ticket-list').scrollIntoView({ block: 'nearest' });
+}
+
+function clearAgentFilter() {
+  if (!currentAgentRecords) return;
+  hideAgentFilterBar();
+  renderTicketList(currentAgentRecords, { showCategory: true });
+}
+
+function openModal(title, sub, records, opts) {
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-sub').textContent = sub;
+  hideAgentFilterBar();
+
+  if (opts.showCategoryChart) {
+    currentAgentRecords = records;
+    currentAgentName = title;
+    renderModalCategoryChart(records);
+  } else {
+    currentAgentRecords = null;
+    currentAgentName = '';
+    document.getElementById('modal-chart-wrap').classList.remove('show');
+    if (modalChartInstance) { modalChartInstance.destroy(); modalChartInstance = null; }
+  }
+
+  renderTicketList(records, opts);
   document.getElementById('overlay').classList.add('open');
 }
 
