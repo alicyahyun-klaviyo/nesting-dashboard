@@ -80,6 +80,8 @@
   }
   #modal-close:hover{border-color:var(--accent); color:var(--accent);}
   #modal-body{overflow-y:auto; padding:8px 20px 20px;}
+  #modal-chart-wrap{display:none; max-width:280px; margin:4px auto 18px; padding-bottom:14px; border-bottom:1px solid var(--border);}
+  #modal-chart-wrap.show{display:block;}
   .ticket-item{border-bottom:1px solid var(--border); padding:14px 0;}
   .ticket-item:last-child{border-bottom:none;}
   .ticket-top{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:6px; flex-wrap:wrap;}
@@ -136,7 +138,10 @@
       </div>
       <button id="modal-close" aria-label="Close">✕</button>
     </div>
-    <div id="modal-body"></div>
+    <div id="modal-body">
+      <div id="modal-chart-wrap"><canvas id="modal-chart" height="200"></canvas></div>
+      <div id="modal-ticket-list"></div>
+    </div>
   </div>
 </div>
 
@@ -144,7 +149,14 @@
 let DATA = null;
 let dailyChartInstance = null;
 let categoryChartInstance = null;
+let modalChartInstance = null;
 let categoryLabelsInOrder = [];
+const CATEGORY_PALETTE = ['#6ea8fe','#7ee2b8','#f2c14e','#ff6b6b','#c792ea','#4dd0e1','#ffab91','#a5d6a7','#f48fb1','#90a4ae','#dce775'];
+
+function colorForCategory(name) {
+  const idx = categoryLabelsInOrder.indexOf(name);
+  return CATEGORY_PALETTE[idx >= 0 ? idx % CATEGORY_PALETTE.length : 0];
+}
 
 // ---------- theme ----------
 function themeVar(name) {
@@ -254,12 +266,11 @@ function renderCharts(data) {
   // Category chart (clickable slices)
   const catEntries = Object.entries(data.category_counts).sort((a,b)=>b[1]-a[1]);
   categoryLabelsInOrder = catEntries.map(e => e[0]);
-  const palette = ['#6ea8fe','#7ee2b8','#f2c14e','#ff6b6b','#c792ea','#4dd0e1','#ffab91','#a5d6a7','#f48fb1','#90a4ae','#dce775'];
   categoryChartInstance = new Chart(document.getElementById('categoryChart'), {
     type: 'doughnut',
     data: {
       labels: categoryLabelsInOrder,
-      datasets: [{ data: catEntries.map(e => e[1]), backgroundColor: palette }]
+      datasets: [{ data: catEntries.map(e => e[1]), backgroundColor: CATEGORY_PALETTE }]
     },
     options: {
       plugins: { legend: { position: 'bottom', labels: { color: textColor, boxWidth: 12, font: { size: 11 } } } },
@@ -299,15 +310,74 @@ function ticketItemHtml(r, opts) {
     </div>`;
 }
 
+function renderModalCategoryChart(records) {
+  const wrap = document.getElementById('modal-chart-wrap');
+  if (modalChartInstance) { modalChartInstance.destroy(); modalChartInstance = null; }
+
+  const counts = {};
+  records.forEach(r => {
+    const cat = r.category || 'Other';
+    counts[cat] = (counts[cat] || 0) + 1;
+  });
+  const entries = Object.entries(counts).sort((a,b) => b[1]-a[1]);
+  if (!entries.length) { wrap.classList.remove('show'); return; }
+
+  wrap.classList.add('show');
+  const total = records.length;
+  const textColor = themeVar('--text');
+
+  modalChartInstance = new Chart(document.getElementById('modal-chart'), {
+    type: 'doughnut',
+    data: {
+      labels: entries.map(e => e[0]),
+      datasets: [{ data: entries.map(e => e[1]), backgroundColor: entries.map(e => colorForCategory(e[0])) }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            color: textColor, boxWidth: 10, font: { size: 10.5 },
+            generateLabels: (chart) => chart.data.labels.map((label, i) => {
+              const value = chart.data.datasets[0].data[i];
+              const pct = ((value/total)*100).toFixed(0);
+              return {
+                text: `${label} ${pct}% (${value})`,
+                fillStyle: chart.data.datasets[0].backgroundColor[i],
+                index: i
+              };
+            })
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const pct = ((ctx.parsed / total) * 100).toFixed(1);
+              return `${ctx.label}: ${ctx.parsed} (${pct}%)`;
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
 function openModal(title, sub, records, opts) {
   document.getElementById('modal-title').textContent = title;
   document.getElementById('modal-sub').textContent = sub;
 
-  const body = document.getElementById('modal-body');
-  if (!records.length) {
-    body.innerHTML = '<div class="empty-msg">No tickets found.</div>';
+  if (opts.showCategoryChart) {
+    renderModalCategoryChart(records);
   } else {
-    body.innerHTML = records.map(r => ticketItemHtml(r, opts)).join('');
+    document.getElementById('modal-chart-wrap').classList.remove('show');
+    if (modalChartInstance) { modalChartInstance.destroy(); modalChartInstance = null; }
+  }
+
+  const list = document.getElementById('modal-ticket-list');
+  if (!records.length) {
+    list.innerHTML = '<div class="empty-msg">No tickets found.</div>';
+  } else {
+    list.innerHTML = records.map(r => ticketItemHtml(r, opts)).join('');
   }
   document.getElementById('overlay').classList.add('open');
 }
@@ -322,7 +392,7 @@ function openAgentModal(userName) {
     userName,
     `${records.length} ticket${records.length === 1 ? '' : 's'} logged in #cnx-manila-nesting-support`,
     records,
-    { showCategory: true }
+    { showCategory: true, showCategoryChart: true }
   );
 }
 
