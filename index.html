@@ -6,15 +6,20 @@
 <title>Nesting Assistance Dashboard</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
-  :root{
+  :root, [data-theme="dark"]{
     --bg:#0f1216; --panel:#161b22; --panel2:#1c232c; --border:#2a3138;
     --text:#e6edf3; --muted:#8b949e; --accent:#6ea8fe; --accent2:#7ee2b8;
-    --warn:#f2c14e; --danger:#ff6b6b;
+    --warn:#f2c14e; --danger:#ff6b6b; --shadow:rgba(0,0,0,.5); --overlay:rgba(0,0,0,.6);
+  }
+  [data-theme="light"]{
+    --bg:#f5f6f8; --panel:#ffffff; --panel2:#eef1f5; --border:#dfe3ea;
+    --text:#1d2129; --muted:#5b6472; --accent:#2f6fed; --accent2:#12946a;
+    --warn:#a9720c; --danger:#c0392b; --shadow:rgba(15,18,22,.12); --overlay:rgba(20,25,32,.45);
   }
   *{box-sizing:border-box;}
   body{
     margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg); color:var(--text);
+    background:var(--bg); color:var(--text); transition:background .15s,color .15s;
   }
   header{
     padding:28px 32px 18px; border-bottom:1px solid var(--border);
@@ -22,21 +27,23 @@
   }
   header h1{margin:0; font-size:22px; font-weight:600;}
   header p{margin:4px 0 0; color:var(--muted); font-size:13px;}
+  #meta-wrap{display:flex; align-items:center; gap:14px;}
   #meta{font-size:12px; color:var(--muted); text-align:right;}
+  #theme-toggle{
+    background:var(--panel2); border:1px solid var(--border); color:var(--text);
+    width:34px; height:34px; border-radius:8px; cursor:pointer; font-size:16px; line-height:1;
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  #theme-toggle:hover{border-color:var(--accent);}
   main{padding:24px 32px 60px; max-width:1280px; margin:0 auto;}
   .kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-bottom:24px;}
   .kpi{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:16px 18px;}
   .kpi .val{font-size:26px; font-weight:700;}
   .kpi .lbl{font-size:12px; color:var(--muted); margin-top:4px; text-transform:uppercase; letter-spacing:.04em;}
-  .grid{display:grid; grid-template-columns:2fr 1fr; gap:16px; margin-bottom:16px;}
-  @media (max-width:900px){.grid{grid-template-columns:1fr;}}
-  .panel{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:18px 20px;}
+  .panel{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:18px 20px; margin-bottom:16px;}
   .panel h2{margin:0 0 14px; font-size:15px; font-weight:600;}
   .panel h2 span{color:var(--muted); font-weight:400; font-size:12px;}
-  table{width:100%; border-collapse:collapse; font-size:13px;}
-  th{text-align:left; color:var(--muted); font-weight:500; font-size:11px; text-transform:uppercase; letter-spacing:.03em; padding:6px 10px; border-bottom:1px solid var(--border);}
-  td{padding:8px 10px; border-bottom:1px solid var(--border); vertical-align:top;}
-  tr:last-child td{border-bottom:none;}
+  .chart-wrap{max-width:520px; margin:0 auto;}
   a{color:var(--accent); text-decoration:none;}
   a:hover{text-decoration:underline;}
   .pill{display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; background:var(--panel2); border:1px solid var(--border); white-space:nowrap;}
@@ -52,14 +59,14 @@
 
   /* modal */
   #overlay{
-    display:none; position:fixed; inset:0; background:rgba(0,0,0,.6);
+    display:none; position:fixed; inset:0; background:var(--overlay);
     align-items:flex-start; justify-content:center; padding:40px 16px; z-index:50; overflow-y:auto;
   }
   #overlay.open{display:flex;}
   #modal{
     background:var(--panel); border:1px solid var(--border); border-radius:12px;
     width:100%; max-width:780px; max-height:calc(100vh - 80px); display:flex; flex-direction:column;
-    box-shadow:0 20px 60px rgba(0,0,0,.5);
+    box-shadow:0 20px 60px var(--shadow);
   }
   #modal-header{
     display:flex; justify-content:space-between; align-items:center;
@@ -77,6 +84,7 @@
   .ticket-item:last-child{border-bottom:none;}
   .ticket-top{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:6px; flex-wrap:wrap;}
   .ticket-date{font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums;}
+  .ticket-who{font-size:12px; color:var(--muted);}
   .ticket-tldr{font-size:13px; line-height:1.5; margin-bottom:8px; color:var(--text);}
   .ticket-links{display:flex; gap:14px; font-size:12px;}
   .ticket-links a{display:inline-flex; align-items:center; gap:4px;}
@@ -91,27 +99,29 @@
     <h1>Nesting Assistance Workflow Dashboard</h1>
     <p>#cnx-manila-nesting-support &middot; usage, question types &amp; who's asking</p>
   </div>
-  <div id="meta">Loading…</div>
+  <div id="meta-wrap">
+    <div id="meta">Loading…</div>
+    <button id="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+  </div>
 </header>
 
 <main>
   <div class="kpis" id="kpis"></div>
 
-  <div class="grid">
-    <div class="panel">
-      <h2>Daily usage <span>tickets logged per day</span></h2>
-      <canvas id="dailyChart" height="110"></canvas>
-    </div>
-    <div class="panel">
-      <h2>Question type <span>by category</span></h2>
-      <canvas id="categoryChart" height="220"></canvas>
-    </div>
+  <div class="panel">
+    <h2>Question type <span>by category &middot; click a slice to see those tickets</span></h2>
+    <div class="chart-wrap"><canvas id="categoryChart" height="280"></canvas></div>
   </div>
 
-  <div class="panel" style="margin-bottom:16px;">
+  <div class="panel">
     <h2>Who's asking <span>total tickets by person</span></h2>
     <p class="hint">Click a name to see their tickets and jump to the Slack thread.</p>
     <div id="userbars"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Daily usage <span>tickets logged per day</span></h2>
+    <canvas id="dailyChart" height="110"></canvas>
   </div>
 </main>
 
@@ -132,7 +142,32 @@
 
 <script>
 let DATA = null;
+let dailyChartInstance = null;
+let categoryChartInstance = null;
+let categoryLabelsInOrder = [];
 
+// ---------- theme ----------
+function themeVar(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('nestingDashboardTheme', theme);
+  const btn = document.getElementById('theme-toggle');
+  btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+  btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+  if (DATA) renderCharts(DATA);
+}
+
+document.getElementById('theme-toggle').addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme') || 'dark';
+  applyTheme(current === 'dark' ? 'light' : 'dark');
+});
+
+applyTheme(localStorage.getItem('nestingDashboardTheme') || 'dark');
+
+// ---------- data load ----------
 async function load() {
   const res = await fetch('data.json?_=' + Date.now());
   const data = await res.json();
@@ -167,42 +202,6 @@ function render(data) {
     `<div class="kpi"><div class="val">${k.val}</div><div class="lbl">${k.lbl}</div></div>`
   ).join('');
 
-  // Daily chart
-  new Chart(document.getElementById('dailyChart'), {
-    type: 'bar',
-    data: {
-      labels: Object.keys(data.daily_counts),
-      datasets: [{
-        label: 'Tickets',
-        data: Object.values(data.daily_counts),
-        backgroundColor: '#6ea8fe',
-        borderRadius: 4,
-        maxBarThickness: 28
-      }]
-    },
-    options: {
-      plugins: { legend: { display: false } },
-      scales: {
-        x: { ticks: { color: '#8b949e', maxRotation: 60, minRotation: 60 }, grid: { color: '#2a3138' } },
-        y: { beginAtZero: true, ticks: { color: '#8b949e' }, grid: { color: '#2a3138' } }
-      }
-    }
-  });
-
-  // Category chart
-  const catEntries = Object.entries(data.category_counts).sort((a,b)=>b[1]-a[1]);
-  const palette = ['#6ea8fe','#7ee2b8','#f2c14e','#ff6b6b','#c792ea','#4dd0e1','#ffab91','#a5d6a7','#f48fb1','#90a4ae','#dce775'];
-  new Chart(document.getElementById('categoryChart'), {
-    type: 'doughnut',
-    data: {
-      labels: catEntries.map(e => e[0]),
-      datasets: [{ data: catEntries.map(e => e[1]), backgroundColor: palette }]
-    },
-    options: {
-      plugins: { legend: { position: 'bottom', labels: { color: '#e6edf3', boxWidth: 12, font: { size: 11 } } } }
-    }
-  });
-
   // User bars (clickable)
   const maxUser = Math.max(...Object.values(data.user_counts));
   const userHtml = Object.entries(data.user_counts).sort((a,b)=>b[1]-a[1]).map(([name,count]) => `
@@ -217,6 +216,100 @@ function render(data) {
     row.addEventListener('click', () => openAgentModal(row.dataset.user));
     row.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openAgentModal(row.dataset.user); });
   });
+
+  renderCharts(data);
+}
+
+function renderCharts(data) {
+  const mutedColor = themeVar('--muted');
+  const borderColor = themeVar('--border');
+  const textColor = themeVar('--text');
+  const accentColor = themeVar('--accent');
+
+  if (dailyChartInstance) dailyChartInstance.destroy();
+  if (categoryChartInstance) categoryChartInstance.destroy();
+
+  // Daily chart
+  dailyChartInstance = new Chart(document.getElementById('dailyChart'), {
+    type: 'bar',
+    data: {
+      labels: Object.keys(data.daily_counts),
+      datasets: [{
+        label: 'Tickets',
+        data: Object.values(data.daily_counts),
+        backgroundColor: accentColor,
+        borderRadius: 4,
+        maxBarThickness: 28
+      }]
+    },
+    options: {
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: mutedColor, maxRotation: 60, minRotation: 60 }, grid: { color: borderColor } },
+        y: { beginAtZero: true, ticks: { color: mutedColor }, grid: { color: borderColor } }
+      }
+    }
+  });
+
+  // Category chart (clickable slices)
+  const catEntries = Object.entries(data.category_counts).sort((a,b)=>b[1]-a[1]);
+  categoryLabelsInOrder = catEntries.map(e => e[0]);
+  const palette = ['#6ea8fe','#7ee2b8','#f2c14e','#ff6b6b','#c792ea','#4dd0e1','#ffab91','#a5d6a7','#f48fb1','#90a4ae','#dce775'];
+  categoryChartInstance = new Chart(document.getElementById('categoryChart'), {
+    type: 'doughnut',
+    data: {
+      labels: categoryLabelsInOrder,
+      datasets: [{ data: catEntries.map(e => e[1]), backgroundColor: palette }]
+    },
+    options: {
+      plugins: { legend: { position: 'bottom', labels: { color: textColor, boxWidth: 12, font: { size: 11 } } } },
+      onHover: (evt, elements) => {
+        evt.native.target.style.cursor = elements.length ? 'pointer' : 'default';
+      },
+      onClick: (evt, elements) => {
+        if (!elements.length) return;
+        const idx = elements[0].index;
+        const category = categoryLabelsInOrder[idx];
+        openCategoryModal(category);
+      }
+    }
+  });
+}
+
+// ---------- shared ticket list rendering ----------
+function ticketItemHtml(r, opts) {
+  const tldr = r.tldr && r.tldr.length > 260 ? r.tldr.slice(0, 260) + '…' : (r.tldr || 'No summary available');
+  const slackLink = r.slack_permalink
+    ? `<a href="${escapeHtml(r.slack_permalink)}" target="_blank" rel="noopener">💬 View Slack message</a>`
+    : `<span class="disabled">💬 Slack link unavailable</span>`;
+  const zendeskLink = r.ticket_url
+    ? `<a href="${escapeHtml(r.ticket_url)}" target="_blank" rel="noopener">🎫 View ticket</a>`
+    : `<span class="disabled">🎫 No ticket link</span>`;
+  const rightBadge = opts.showCategory
+    ? `<span class="pill">${escapeHtml(r.category || 'Other')}</span>`
+    : `<span class="ticket-who">${escapeHtml(r.user)}</span>`;
+  return `
+    <div class="ticket-item">
+      <div class="ticket-top">
+        <span class="ticket-date">${escapeHtml(r.date)} · ${escapeHtml(r.time || '')}</span>
+        ${rightBadge}
+      </div>
+      <div class="ticket-tldr">${escapeHtml(tldr)}</div>
+      <div class="ticket-links">${zendeskLink}${slackLink}</div>
+    </div>`;
+}
+
+function openModal(title, sub, records, opts) {
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-sub').textContent = sub;
+
+  const body = document.getElementById('modal-body');
+  if (!records.length) {
+    body.innerHTML = '<div class="empty-msg">No tickets found.</div>';
+  } else {
+    body.innerHTML = records.map(r => ticketItemHtml(r, opts)).join('');
+  }
+  document.getElementById('overlay').classList.add('open');
 }
 
 function openAgentModal(userName) {
@@ -225,36 +318,26 @@ function openAgentModal(userName) {
     .filter(r => r.user === userName)
     .slice()
     .sort((a,b) => (b.date + b.time).localeCompare(a.date + a.time));
+  openModal(
+    userName,
+    `${records.length} ticket${records.length === 1 ? '' : 's'} logged in #cnx-manila-nesting-support`,
+    records,
+    { showCategory: true }
+  );
+}
 
-  document.getElementById('modal-title').textContent = userName;
-  document.getElementById('modal-sub').textContent =
-    `${records.length} ticket${records.length === 1 ? '' : 's'} logged in #cnx-manila-nesting-support`;
-
-  const body = document.getElementById('modal-body');
-  if (!records.length) {
-    body.innerHTML = '<div class="empty-msg">No tickets found for this person.</div>';
-  } else {
-    body.innerHTML = records.map(r => {
-      const tldr = r.tldr && r.tldr.length > 260 ? r.tldr.slice(0, 260) + '…' : (r.tldr || 'No summary available');
-      const slackLink = r.slack_permalink
-        ? `<a href="${escapeHtml(r.slack_permalink)}" target="_blank" rel="noopener">💬 View Slack message</a>`
-        : `<span class="disabled">💬 Slack link unavailable</span>`;
-      const zendeskLink = r.ticket_url
-        ? `<a href="${escapeHtml(r.ticket_url)}" target="_blank" rel="noopener">🎫 View ticket</a>`
-        : `<span class="disabled">🎫 No ticket link</span>`;
-      return `
-        <div class="ticket-item">
-          <div class="ticket-top">
-            <span class="ticket-date">${escapeHtml(r.date)} · ${escapeHtml(r.time || '')}</span>
-            <span class="pill">${escapeHtml(r.category || 'Other')}</span>
-          </div>
-          <div class="ticket-tldr">${escapeHtml(tldr)}</div>
-          <div class="ticket-links">${zendeskLink}${slackLink}</div>
-        </div>`;
-    }).join('');
-  }
-
-  document.getElementById('overlay').classList.add('open');
+function openCategoryModal(category) {
+  if (!DATA) return;
+  const records = DATA.records
+    .filter(r => r.category === category)
+    .slice()
+    .sort((a,b) => (b.date + b.time).localeCompare(a.date + a.time));
+  openModal(
+    category,
+    `${records.length} ticket${records.length === 1 ? '' : 's'} in this category`,
+    records,
+    { showCategory: false }
+  );
 }
 
 function closeModal() {
