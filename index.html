@@ -46,7 +46,7 @@
   .panel-tight{padding:10px 16px 6px;}
   .panel-tight h2{margin-bottom:4px;}
   .chart-wrap{max-width:520px; margin:0 auto;}
-  .category-chart-wrap{max-width:560px; margin:0 auto;}
+  .category-chart-wrap{max-width:720px; margin:0 auto;}
   a{color:var(--accent); text-decoration:none;}
   a:hover{text-decoration:underline;}
   .pill{display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; background:var(--panel2); border:1px solid var(--border); white-space:nowrap;}
@@ -120,7 +120,7 @@
 
   <div class="panel panel-tight">
     <h2>Question type <span>by category &middot; click a slice to see those tickets</span></h2>
-    <div class="chart-wrap category-chart-wrap"><canvas id="categoryChart" height="170"></canvas></div>
+    <div class="chart-wrap category-chart-wrap"><canvas id="categoryChart" height="300"></canvas></div>
   </div>
 
   <div class="panel">
@@ -292,13 +292,14 @@ function renderCharts(data) {
   categoryLabelsInOrder = catEntries.map(e => e[0]);
   const catTotal = catEntries.reduce((sum, e) => sum + e[1], 0);
   categoryChartInstance = new Chart(document.getElementById('categoryChart'), {
-    type: 'doughnut',
+    type: 'pie',
     data: {
       labels: categoryLabelsInOrder,
       datasets: [{ data: catEntries.map(e => e[1]), backgroundColor: CATEGORY_PALETTE }]
     },
     options: {
       layout: { padding: 0 },
+      radius: '96%',
       plugins: {
         legend: {
           position: 'right',
