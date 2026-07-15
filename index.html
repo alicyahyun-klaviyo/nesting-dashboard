@@ -40,12 +40,48 @@
   a{color:var(--accent); text-decoration:none;}
   a:hover{text-decoration:underline;}
   .pill{display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; background:var(--panel2); border:1px solid var(--border); white-space:nowrap;}
-  .userbar-row{display:flex; align-items:center; gap:8px; padding:6px 0;}
+  .userbar-row{display:flex; align-items:center; gap:8px; padding:7px 6px; border-radius:6px; cursor:pointer; transition:background .12s;}
+  .userbar-row:hover{background:var(--panel2);}
+  .userbar-row:hover .userbar-name{color:var(--accent);}
   .userbar-name{width:150px; font-size:12px; flex-shrink:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
   .userbar-track{flex:1; background:var(--panel2); border-radius:4px; height:10px; overflow:hidden;}
   .userbar-fill{background:var(--accent); height:100%; border-radius:4px;}
   .userbar-count{width:28px; text-align:right; font-size:12px; color:var(--muted);}
+  .hint{font-size:11px; color:var(--muted); margin:-6px 0 12px;}
   footer{text-align:center; color:var(--muted); font-size:12px; padding:20px; border-top:1px solid var(--border);}
+
+  /* modal */
+  #overlay{
+    display:none; position:fixed; inset:0; background:rgba(0,0,0,.6);
+    align-items:flex-start; justify-content:center; padding:40px 16px; z-index:50; overflow-y:auto;
+  }
+  #overlay.open{display:flex;}
+  #modal{
+    background:var(--panel); border:1px solid var(--border); border-radius:12px;
+    width:100%; max-width:780px; max-height:calc(100vh - 80px); display:flex; flex-direction:column;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
+  }
+  #modal-header{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:16px 20px; border-bottom:1px solid var(--border); flex-shrink:0;
+  }
+  #modal-header h3{margin:0; font-size:16px; font-weight:600;}
+  #modal-header .sub{font-size:12px; color:var(--muted); margin-top:2px;}
+  #modal-close{
+    background:var(--panel2); border:1px solid var(--border); color:var(--text);
+    width:28px; height:28px; border-radius:6px; cursor:pointer; font-size:15px; line-height:1;
+  }
+  #modal-close:hover{border-color:var(--accent); color:var(--accent);}
+  #modal-body{overflow-y:auto; padding:8px 20px 20px;}
+  .ticket-item{border-bottom:1px solid var(--border); padding:14px 0;}
+  .ticket-item:last-child{border-bottom:none;}
+  .ticket-top{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:6px; flex-wrap:wrap;}
+  .ticket-date{font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums;}
+  .ticket-tldr{font-size:13px; line-height:1.5; margin-bottom:8px; color:var(--text);}
+  .ticket-links{display:flex; gap:14px; font-size:12px;}
+  .ticket-links a{display:inline-flex; align-items:center; gap:4px;}
+  .ticket-links .disabled{color:var(--muted); cursor:default;}
+  .empty-msg{color:var(--muted); font-size:13px; padding:20px 0; text-align:center;}
 </style>
 </head>
 <body>
@@ -74,17 +110,38 @@
 
   <div class="panel" style="margin-bottom:16px;">
     <h2>Who's asking <span>total tickets by person</span></h2>
+    <p class="hint">Click a name to see their tickets and jump to the Slack thread.</p>
     <div id="userbars"></div>
   </div>
 </main>
 
 <footer>Auto-refreshes daily at 10am (weekdays) from Slack &middot; data generated <span id="gen-at"></span></footer>
 
+<div id="overlay">
+  <div id="modal" role="dialog" aria-modal="true">
+    <div id="modal-header">
+      <div>
+        <h3 id="modal-title">Agent</h3>
+        <div class="sub" id="modal-sub"></div>
+      </div>
+      <button id="modal-close" aria-label="Close">✕</button>
+    </div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
 <script>
+let DATA = null;
+
 async function load() {
   const res = await fetch('data.json?_=' + Date.now());
   const data = await res.json();
+  DATA = data;
   render(data);
+}
+
+function escapeHtml(str) {
+  return String(str ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
 function render(data) {
@@ -94,7 +151,6 @@ function render(data) {
     new Date(data.generated_at).toLocaleString();
 
   // KPIs
-  const days = Object.keys(data.daily_counts);
   const activeDays = Object.values(data.daily_counts).filter(v => v > 0);
   const avgPerActiveDay = activeDays.length ? (data.total_count / activeDays.length) : 0;
   const topUser = Object.entries(data.user_counts).sort((a,b)=>b[1]-a[1])[0];
@@ -115,7 +171,7 @@ function render(data) {
   new Chart(document.getElementById('dailyChart'), {
     type: 'bar',
     data: {
-      labels: days,
+      labels: Object.keys(data.daily_counts),
       datasets: [{
         label: 'Tickets',
         data: Object.values(data.daily_counts),
@@ -147,16 +203,71 @@ function render(data) {
     }
   });
 
-  // User bars
+  // User bars (clickable)
   const maxUser = Math.max(...Object.values(data.user_counts));
   const userHtml = Object.entries(data.user_counts).sort((a,b)=>b[1]-a[1]).map(([name,count]) => `
-    <div class="userbar-row">
-      <div class="userbar-name" title="${name}">${name}</div>
+    <div class="userbar-row" data-user="${escapeHtml(name)}" tabindex="0" role="button">
+      <div class="userbar-name" title="${escapeHtml(name)}">${escapeHtml(name)}</div>
       <div class="userbar-track"><div class="userbar-fill" style="width:${(count/maxUser*100).toFixed(0)}%"></div></div>
       <div class="userbar-count">${count}</div>
     </div>`).join('');
   document.getElementById('userbars').innerHTML = userHtml;
+
+  document.querySelectorAll('.userbar-row').forEach(row => {
+    row.addEventListener('click', () => openAgentModal(row.dataset.user));
+    row.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openAgentModal(row.dataset.user); });
+  });
 }
+
+function openAgentModal(userName) {
+  if (!DATA) return;
+  const records = DATA.records
+    .filter(r => r.user === userName)
+    .slice()
+    .sort((a,b) => (b.date + b.time).localeCompare(a.date + a.time));
+
+  document.getElementById('modal-title').textContent = userName;
+  document.getElementById('modal-sub').textContent =
+    `${records.length} ticket${records.length === 1 ? '' : 's'} logged in #cnx-manila-nesting-support`;
+
+  const body = document.getElementById('modal-body');
+  if (!records.length) {
+    body.innerHTML = '<div class="empty-msg">No tickets found for this person.</div>';
+  } else {
+    body.innerHTML = records.map(r => {
+      const tldr = r.tldr && r.tldr.length > 260 ? r.tldr.slice(0, 260) + '…' : (r.tldr || 'No summary available');
+      const slackLink = r.slack_permalink
+        ? `<a href="${escapeHtml(r.slack_permalink)}" target="_blank" rel="noopener">💬 View Slack message</a>`
+        : `<span class="disabled">💬 Slack link unavailable</span>`;
+      const zendeskLink = r.ticket_url
+        ? `<a href="${escapeHtml(r.ticket_url)}" target="_blank" rel="noopener">🎫 View ticket</a>`
+        : `<span class="disabled">🎫 No ticket link</span>`;
+      return `
+        <div class="ticket-item">
+          <div class="ticket-top">
+            <span class="ticket-date">${escapeHtml(r.date)} · ${escapeHtml(r.time || '')}</span>
+            <span class="pill">${escapeHtml(r.category || 'Other')}</span>
+          </div>
+          <div class="ticket-tldr">${escapeHtml(tldr)}</div>
+          <div class="ticket-links">${zendeskLink}${slackLink}</div>
+        </div>`;
+    }).join('');
+  }
+
+  document.getElementById('overlay').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('overlay').classList.remove('open');
+}
+
+document.getElementById('modal-close').addEventListener('click', closeModal);
+document.getElementById('overlay').addEventListener('click', e => {
+  if (e.target.id === 'overlay') closeModal();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+});
 
 load().catch(err => {
   document.getElementById('meta').textContent = 'Failed to load data.json';
