@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-21T02:03:56.412014+00:00",
+  "generated_at": "2026-07-22T02:03:59.068900Z",
   "date_range": {
     "start": "2026-06-22",
-    "end": "2026-07-21"
+    "end": "2026-07-22"
   },
-  "last_message_ts": 1784598977.238999,
-  "total_count": 509,
+  "last_message_ts": "1784682963.951709",
+  "total_count": 511,
   "daily_counts": {
     "2026-06-22": 30,
     "2026-06-23": 34,
@@ -28,7 +28,8 @@
     "2026-07-16": 8,
     "2026-07-17": 3,
     "2026-07-20": 0,
-    "2026-07-21": 3
+    "2026-07-21": 3,
+    "2026-07-22": 2
   },
   "user_counts": {
     "Rafael Joseph Rayco": 32,
@@ -57,24 +58,25 @@
     "Myc Leorie Valera": 6,
     "Marvin August Claros": 5,
     "Jenica Dela Cruz": 5,
+    "Luis Gabriel De taza": 4,
     "Nimilo Ocdol": 3,
     "Al Christian Bolo": 3,
     "Christian Luis Aceron": 3,
-    "Luis Gabriel De taza": 3,
     "Kean Abesa": 2,
-    "Keon Carl Jordan Reyes": 1
+    "Keon Carl Jordan Reyes": 1,
+    "Clarence Español": 1
   },
   "category_counts": {
-    "Integrations": 84,
     "Flows": 102,
-    "Forms & Sign-ups": 48,
-    "Other": 19,
-    "SMS & Consent": 25,
+    "Integrations": 84,
     "Profiles & Subscription Status": 59,
-    "Billing & Account": 31,
+    "Campaigns": 56,
     "Segmentation & Lists": 55,
-    "Campaigns": 55,
-    "Deliverability & Bounces": 20,
+    "Forms & Sign-ups": 48,
+    "Billing & Account": 31,
+    "SMS & Consent": 25,
+    "Deliverability & Bounces": 21,
+    "Other": 19,
     "Domains & DNS": 11
   },
   "records": [
@@ -5747,6 +5749,28 @@
       "category": "Forms & Sign-ups",
       "message_ts": "1784598977.238999",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1784598977238999"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "06:29:46",
+      "user": "Luis Gabriel De taza",
+      "user_id": "U0B2NKJ78KE",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4084278",
+      "tldr": "The customer reports two urgent issues: a significant drop in email open rates from their usual 50–57% to around 25–32% across three campaigns on 07/21, despite no changes to their sending domain, audience, or authentication settings; and a delay in campaign dashboard reporting where campaigns remain in \"sending\" status with no visible metrics, though individual campaign views show order data. They request investigation into possible deliverability problems, domain/IP reputation changes, platform-wide tracking issues, and confirmation on the reliability of order data despite dashboard delays. They seek prompt resolution to safely proceed with upcoming campaigns.",
+      "category": "Deliverability & Bounces",
+      "message_ts": "1784672986.349529",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1784672986349529"
+    },
+    {
+      "date": "2026-07-22",
+      "time": "09:16:03",
+      "user": "Clarence Español",
+      "user_id": "U0B2FT2PUN9",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4082556",
+      "tldr": "The customer reported that the AI assistance (sparkle) option is no longer visible in their email sections.",
+      "category": "Campaigns",
+      "message_ts": "1784682963.951709",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1784682963951709"
     }
   ]
 }
