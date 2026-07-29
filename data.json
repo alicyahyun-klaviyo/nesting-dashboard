@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-27T02:05:23.633000Z",
+  "generated_at": "2026-07-29T02:04:08.433125Z",
   "date_range": {
     "start": "2026-06-22",
-    "end": "2026-07-25"
+    "end": "2026-07-29"
   },
-  "last_message_ts": "1784933310.809159",
-  "total_count": 533,
+  "last_message_ts": "1785287271.665259",
+  "total_count": 537,
   "daily_counts": {
     "2026-06-22": 30,
     "2026-06-23": 34,
@@ -31,12 +31,15 @@
     "2026-07-21": 3,
     "2026-07-22": 3,
     "2026-07-23": 9,
-    "2026-07-24": 10
+    "2026-07-24": 10,
+    "2026-07-27": 0,
+    "2026-07-28": 3,
+    "2026-07-29": 1
   },
   "user_counts": {
     "Rafael Joseph Rayco": 32,
     "Kent Jayson Reteo": 31,
-    "Ronald Flores": 30,
+    "Ronald Flores": 31,
     "Emmanuel Diaz": 28,
     "Angel Joy Alcantara": 27,
     "Dan Albryne Capua": 26,
@@ -48,9 +51,9 @@
     "Steve Bryann Rivas": 24,
     "Threa Kate Quirong": 23,
     "Rajeev Mueller Guimbao": 21,
+    "Frank Gehry Ruz": 17,
     "John Patrick Lopez": 17,
     "Erwin Eleuterio": 17,
-    "Frank Gehry Ruz": 17,
     "Lou Elaizha Mars Maguddayao": 13,
     "Justine Angelo Rivera": 12,
     "Ronel Albo": 11,
@@ -58,31 +61,53 @@
     "Al Christian Bolo": 9,
     "Marvin August Claros": 9,
     "Arjay Galit": 8,
+    "Jenica Dela Cruz": 8,
     "Fairy May Tebia": 8,
-    "Jenica Dela Cruz": 7,
+    "Luis Gabriel De taza": 7,
     "Myc Leorie Valera": 6,
-    "Luis Gabriel De taza": 6,
     "Clarence Español": 5,
+    "Nimilo Ocdol": 4,
     "Kean Abesa": 4,
     "Christian Luis Aceron": 3,
-    "Nimilo Ocdol": 3,
     "Keon Carl Jordan Reyes": 1,
     "Deonet Roman Ong": 1
   },
   "category_counts": {
-    "Flows": 107,
+    "Flows": 109,
     "Integrations": 86,
-    "Campaigns": 60,
+    "Campaigns": 61,
     "Profiles & Subscription Status": 60,
     "Segmentation & Lists": 57,
     "Forms & Sign-ups": 51,
     "Billing & Account": 33,
-    "SMS & Consent": 25,
+    "SMS & Consent": 26,
     "Other": 22,
     "Deliverability & Bounces": 21,
     "Domains & DNS": 11
   },
   "records": [
+    {
+      "date": "2026-06-25",
+      "time": "12:26:14",
+      "user": "Dan Albryne Capua",
+      "user_id": "U0B2DBZV091",
+      "ticket_url": null,
+      "tldr": "Customer reached out due to having only 50% of total views on their session traffic on Shopify.",
+      "category": "Integrations",
+      "message_ts": null,
+      "slack_permalink": null
+    },
+    {
+      "date": "2026-07-03",
+      "time": "13:29:57",
+      "user": "Frank Gehry Ruz",
+      "user_id": "U0B23U23U0P",
+      "ticket_url": null,
+      "tldr": "cx having issue about shift+ enter and enter",
+      "category": "Other",
+      "message_ts": null,
+      "slack_permalink": null
+    },
     {
       "date": "2026-06-22",
       "time": "11:14:04",
@@ -1205,17 +1230,6 @@
       "category": "Forms & Sign-ups",
       "message_ts": "1782353446.236429",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782353446236429"
-    },
-    {
-      "date": "2026-06-25",
-      "time": "12:26:14",
-      "user": "Dan Albryne Capua",
-      "user_id": "U0B2DBZV091",
-      "ticket_url": null,
-      "tldr": "Customer reached out due to having only 50% of total views on their session traffic on Shopify.",
-      "category": "Integrations",
-      "message_ts": null,
-      "slack_permalink": null
     },
     {
       "date": "2026-06-25",
@@ -3348,17 +3362,6 @@
       "category": "Flows",
       "message_ts": "1783049159.329809",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1783049159329809"
-    },
-    {
-      "date": "2026-07-03",
-      "time": "13:29:57",
-      "user": "Frank Gehry Ruz",
-      "user_id": "U0B23U23U0P",
-      "ticket_url": null,
-      "tldr": "cx having issue about shift+ enter and enter",
-      "category": "Other",
-      "message_ts": null,
-      "slack_permalink": null
     },
     {
       "date": "2026-07-03",
@@ -6016,6 +6019,50 @@
       "category": "Integrations",
       "message_ts": "1784933310.809159",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1784933310809159"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "06:30:51",
+      "user": "Jenica Dela Cruz",
+      "user_id": "U0B2FN2UGPP",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4093570",
+      "tldr": "issue with pricing and his abandoned cart emails not being correct.",
+      "category": "Flows",
+      "message_ts": "1785191451.388879",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785191451388879"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "06:44:42",
+      "user": "Ronald Flores",
+      "user_id": "U0B23BZNBHV",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4093791",
+      "tldr": "The customer reports that only one of their four flows (the Win-back flow) is visible in the Flows overview, while the other three flows—created via the onboarding wizard with default names and in draft status—do not appear despite filters set to show all and page refreshes. They have confirmed all flows exist via the Klaviyo chatbot. The customer suspects the issue may relate to the flows' default names or origin and requests an explanation for the missing flows in the overview and assistance to make them visible or rename them.",
+      "category": "Flows",
+      "message_ts": "1785192282.619649",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785192282619649"
+    },
+    {
+      "date": "2026-07-28",
+      "time": "11:27:03",
+      "user": "Nimilo Ocdol",
+      "user_id": "U0B2FD3DNH3",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4086715",
+      "tldr": "The customer reported that the \"View in Browser\" link in their Klaviyo campaign (\"July Newsletter (Sectioned clone)\"), when opened on a Google Pixel 10 XL Pro via the Gmail app, loads the desktop version of the email in Chrome instead of the mobile layout, despite the email rendering correctly in the Gmail app itself. The email was built entirely with Klaviyo's drag-and-drop editor without custom HTML",
+      "category": "Campaigns",
+      "message_ts": "1785209223.047669",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785209223047669"
+    },
+    {
+      "date": "2026-07-29",
+      "time": "09:07:51",
+      "user": "Luis Gabriel De taza",
+      "user_id": "U0B2NKJ78KE",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4096024",
+      "tldr": "Toll fee rejection",
+      "category": "SMS & Consent",
+      "message_ts": "1785287271.665259",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785287271665259"
     }
   ]
 }
