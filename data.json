@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-31T00:27:15.636140Z",
+  "generated_at": "2026-08-03T00:04:10.696Z",
   "date_range": {
     "start": "2026-06-22",
-    "end": "2026-07-30"
+    "end": "2026-07-31"
   },
-  "last_message_ts": "1785374544.893079",
-  "total_count": 538,
+  "last_message_ts": "1785460515.803299",
+  "total_count": 539,
   "daily_counts": {
     "2026-06-22": 30,
     "2026-06-23": 34,
@@ -36,7 +36,8 @@
     "2026-07-27": 0,
     "2026-07-28": 3,
     "2026-07-29": 1,
-    "2026-07-30": 1
+    "2026-07-30": 1,
+    "2026-07-31": 1
   },
   "user_counts": {
     "Rafael Joseph Rayco": 32,
@@ -60,7 +61,7 @@
     "Justine Angelo Rivera": 12,
     "Ronel Albo": 11,
     "Ryan Baking": 10,
-    "Marvin August Claros": 10,
+    "Marvin August Claros": 11,
     "Al Christian Bolo": 9,
     "Arjay Galit": 8,
     "Jenica Dela Cruz": 8,
@@ -85,7 +86,7 @@
     "SMS & Consent": 26,
     "Other": 22,
     "Deliverability & Bounces": 21,
-    "Domains & DNS": 12
+    "Domains & DNS": 13
   },
   "records": [
     {
@@ -6076,6 +6077,17 @@
       "category": "Domains & DNS",
       "message_ts": "1785374544.893079",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785374544893079"
+    },
+    {
+      "date": "2026-07-31",
+      "time": "11:15:15",
+      "user": "Marvin August Claros",
+      "user_id": "U0B23KNT4KH",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4100164",
+      "tldr": "BSD is fully verified and Active, but they are using Shopify and it requires CNAME records.",
+      "category": "Domains & DNS",
+      "message_ts": "1785460515.803299",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785460515803299"
     }
   ]
 }
