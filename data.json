@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-03T00:04:10.696Z",
+  "generated_at": "2026-08-04T00:05:44.518Z",
   "date_range": {
     "start": "2026-06-22",
-    "end": "2026-07-31"
+    "end": "2026-08-04"
   },
-  "last_message_ts": "1785460515.803299",
-  "total_count": 539,
+  "last_message_ts": "1785797996.689219",
+  "total_count": 550,
   "daily_counts": {
     "2026-06-22": 30,
     "2026-06-23": 34,
@@ -37,80 +37,60 @@
     "2026-07-28": 3,
     "2026-07-29": 1,
     "2026-07-30": 1,
-    "2026-07-31": 1
+    "2026-07-31": 1,
+    "2026-08-03": 9,
+    "2026-08-04": 2
   },
   "user_counts": {
-    "Rafael Joseph Rayco": 32,
+    "Rafael Joseph Rayco": 35,
     "Kent Jayson Reteo": 31,
     "Ronald Flores": 31,
-    "Emmanuel Diaz": 28,
+    "Emmanuel Diaz": 29,
     "Angel Joy Alcantara": 27,
     "Dan Albryne Capua": 26,
     "Joshua Pelayo": 26,
     "Kheid Anthony Villanueva": 25,
     "Caizen Dee Kabigting": 25,
     "Jhon Cyruz Tiama": 24,
-    "Niña Jenica Custodio": 24,
+    "Ni\u00f1a Jenica Custodio": 24,
     "Steve Bryann Rivas": 24,
     "Threa Kate Quirong": 23,
     "Rajeev Mueller Guimbao": 21,
-    "Frank Gehry Ruz": 17,
     "John Patrick Lopez": 17,
     "Erwin Eleuterio": 17,
+    "Frank Gehry Ruz": 17,
     "Lou Elaizha Mars Maguddayao": 13,
     "Justine Angelo Rivera": 12,
+    "Ryan Baking": 12,
+    "Marvin August Claros": 12,
     "Ronel Albo": 11,
-    "Ryan Baking": 10,
-    "Marvin August Claros": 11,
     "Al Christian Bolo": 9,
     "Arjay Galit": 8,
     "Jenica Dela Cruz": 8,
     "Fairy May Tebia": 8,
     "Luis Gabriel De taza": 7,
     "Myc Leorie Valera": 6,
-    "Clarence Español": 5,
+    "Clarence Espa\u00f1ol": 5,
+    "Deonet Roman Ong": 5,
     "Nimilo Ocdol": 4,
     "Kean Abesa": 4,
     "Christian Luis Aceron": 3,
-    "Keon Carl Jordan Reyes": 1,
-    "Deonet Roman Ong": 1
+    "Keon Carl Jordan Reyes": 1
   },
   "category_counts": {
-    "Flows": 109,
-    "Integrations": 86,
-    "Campaigns": 61,
-    "Profiles & Subscription Status": 60,
-    "Segmentation & Lists": 57,
-    "Forms & Sign-ups": 51,
+    "Flows": 112,
+    "Integrations": 87,
+    "Campaigns": 63,
+    "Profiles & Subscription Status": 61,
+    "Segmentation & Lists": 58,
+    "Forms & Sign-ups": 52,
     "Billing & Account": 33,
-    "SMS & Consent": 26,
-    "Other": 22,
+    "SMS & Consent": 27,
+    "Other": 23,
     "Deliverability & Bounces": 21,
     "Domains & DNS": 13
   },
   "records": [
-    {
-      "date": "2026-06-25",
-      "time": "12:26:14",
-      "user": "Dan Albryne Capua",
-      "user_id": "U0B2DBZV091",
-      "ticket_url": null,
-      "tldr": "Customer reached out due to having only 50% of total views on their session traffic on Shopify.",
-      "category": "Integrations",
-      "message_ts": null,
-      "slack_permalink": null
-    },
-    {
-      "date": "2026-07-03",
-      "time": "13:29:57",
-      "user": "Frank Gehry Ruz",
-      "user_id": "U0B23U23U0P",
-      "ticket_url": null,
-      "tldr": "cx having issue about shift+ enter and enter",
-      "category": "Other",
-      "message_ts": null,
-      "slack_permalink": null
-    },
     {
       "date": "2026-06-22",
       "time": "11:14:04",
@@ -202,7 +182,7 @@
     {
       "date": "2026-06-22",
       "time": "12:06:59",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4033023",
       "tldr": "The customer reach out again because they'r experiencing their flow (Ready to review) not triggering due to anomaly detection in flow trigger. The customer provide their old ticket number.",
@@ -329,11 +309,11 @@
       "user": "Ronald Flores",
       "user_id": "U0B23BZNBHV",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4033198",
-      "tldr": "No email activity is observed in Klaviyo — emails are not being triggered or sent at all.",
+      "tldr": "No email activity is observed in Klaviyo \u2014 emails are not being triggered or sent at all.",
       "category": "Flows",
       "message_ts": "1782102510.302309",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782102510302309",
-      "category_reclassified_reason": "No email activity because the list/segment-triggered flow had no synced events reaching the profile from a third-party integration — a flow-trigger issue."
+      "category_reclassified_reason": "No email activity because the list/segment-triggered flow had no synced events reaching the profile from a third-party integration \u2014 a flow-trigger issue."
     },
     {
       "date": "2026-06-22",
@@ -468,7 +448,7 @@
       "category": "Deliverability & Bounces",
       "message_ts": "1782178566.162919",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782178566162919",
-      "category_reclassified_reason": "Campaign built with custom HTML wasn't received at all even after cloning and test-sending — escalated for advanced delivery troubleshooting."
+      "category_reclassified_reason": "Campaign built with custom HTML wasn't received at all even after cloning and test-sending \u2014 escalated for advanced delivery troubleshooting."
     },
     {
       "date": "2026-06-23",
@@ -493,7 +473,7 @@
       "message_ts": "1782178635.691669",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782178635691669",
       "zendesk_productarea": "Profiles::Export",
-      "category_reclassified_reason": "productarea is 'Profiles::Export' — exporting/migrating profile data between legacy and primary accounts — which fits the Profiles & Subscription Status category (individual customer profile data)."
+      "category_reclassified_reason": "productarea is 'Profiles::Export' \u2014 exporting/migrating profile data between legacy and primary accounts \u2014 which fits the Profiles & Subscription Status category (individual customer profile data)."
     },
     {
       "date": "2026-06-23",
@@ -605,7 +585,7 @@
       "category": "Integrations",
       "message_ts": "1782182087.459159",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782182087459159",
-      "category_reclassified_reason": "Second half of ticket concerns a 'Start a return' error despite Loop Returns being configured in Customer Hub — a returns-provider integration issue."
+      "category_reclassified_reason": "Second half of ticket concerns a 'Start a return' error despite Loop Returns being configured in Customer Hub \u2014 a returns-provider integration issue."
     },
     {
       "date": "2026-06-23",
@@ -639,7 +619,7 @@
       "category": "Integrations",
       "message_ts": "1782182481.067159",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782182481067159",
-      "category_reclassified_reason": "Instagram 'Social Auto-replies' (comment/DM automation) not firing correctly — an Instagram integration issue, escalated as a Paid Early Access feature bug."
+      "category_reclassified_reason": "Instagram 'Social Auto-replies' (comment/DM automation) not firing correctly \u2014 an Instagram integration issue, escalated as a Paid Early Access feature bug."
     },
     {
       "date": "2026-06-23",
@@ -945,7 +925,7 @@
     {
       "date": "2026-06-24",
       "time": "12:29:22",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4037722",
       "tldr": "Customer is having a concern with their 'Cart Started API triggered flow that's performing poorly compared to 'Add to cart' metric flow.",
@@ -996,7 +976,7 @@
       "category": "Deliverability & Bounces",
       "message_ts": "1782268962.378119",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782268962378119",
-      "category_reclassified_reason": "Transactional 'Forgot Password' flow email landing in Gmail's Promotions tab instead of Primary inbox — an inbox-placement/deliverability topic."
+      "category_reclassified_reason": "Transactional 'Forgot Password' flow email landing in Gmail's Promotions tab instead of Primary inbox \u2014 an inbox-placement/deliverability topic."
     },
     {
       "date": "2026-06-24",
@@ -1072,7 +1052,7 @@
       "user": "Erwin Eleuterio",
       "user_id": "U0B2JRS3LR0",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4037000",
-      "tldr": "The customer query is about Meta Leads Integrations which she is wondering if those leads will also be removed from the segments after 90 days when using the integration Or will they remain in the segments indefinitely once created, so she wouldn’t need to manage this manually.",
+      "tldr": "The customer query is about Meta Leads Integrations which she is wondering if those leads will also be removed from the segments after 90 days when using the integration Or will they remain in the segments indefinitely once created, so she wouldn\u2019t need to manage this manually.",
       "category": "Integrations",
       "message_ts": "1782276777.318169",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782276777318169"
@@ -1131,7 +1111,7 @@
       "category": "Integrations",
       "message_ts": "1782350144.949419",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782350144949419",
-      "category_reclassified_reason": "Question about next steps after setting up a custom catalog feed (JSON/XML sync); escalated to Developer Frontline Pod for custom metric mapping — a catalog/integration topic."
+      "category_reclassified_reason": "Question about next steps after setting up a custom catalog feed (JSON/XML sync); escalated to Developer Frontline Pod for custom metric mapping \u2014 a catalog/integration topic."
     },
     {
       "date": "2026-06-25",
@@ -1166,7 +1146,7 @@
       "message_ts": "1782350996.347189",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782350996347189",
       "zendesk_productarea": "Integrations::BigCommerce::Add to Cart",
-      "category_reclassified_reason": "productarea is 'Integrations::BigCommerce::Add to Cart' — an ecommerce platform sync/tracking issue, a direct Integrations match."
+      "category_reclassified_reason": "productarea is 'Integrations::BigCommerce::Add to Cart' \u2014 an ecommerce platform sync/tracking issue, a direct Integrations match."
     },
     {
       "date": "2026-06-25",
@@ -1233,6 +1213,17 @@
       "category": "Forms & Sign-ups",
       "message_ts": "1782353446.236429",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782353446236429"
+    },
+    {
+      "date": "2026-06-25",
+      "time": "12:26:14",
+      "user": "Dan Albryne Capua",
+      "user_id": "U0B2DBZV091",
+      "ticket_url": null,
+      "tldr": "Customer reached out due to having only 50% of total views on their session traffic on Shopify.",
+      "category": "Integrations",
+      "message_ts": null,
+      "slack_permalink": null
     },
     {
       "date": "2026-06-25",
@@ -1350,7 +1341,7 @@
     {
       "date": "2026-06-25",
       "time": "14:43:35",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4039453",
       "tldr": "Customer is requesting a feature of flow that can automatically unsuppressed a profile once triggered a placed order metric. Since Hubspot also have that feature.",
@@ -1432,7 +1423,7 @@
       "user": "Kent Jayson Reteo",
       "user_id": "U0B2G0XE5B7",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4041485",
-      "tldr": "CX mentioned that you need an AI just to export contact lists from one Klaviyo account to another. Also cx sent a feedback stating \"Your export/import feature can't even handle the simplest task—not even with just the standard fields. Is that what the developers intended? An AI cleaned up the columns.\"",
+      "tldr": "CX mentioned that you need an AI just to export contact lists from one Klaviyo account to another. Also cx sent a feedback stating \"Your export/import feature can't even handle the simplest task\u2014not even with just the standard fields. Is that what the developers intended? An AI cleaned up the columns.\"",
       "category": "Segmentation & Lists",
       "message_ts": "1782437417.216449",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782437417216449"
@@ -1543,7 +1534,7 @@
     {
       "date": "2026-06-26",
       "time": "12:29:44",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4041563",
       "tldr": "Customer still experiencing issue with their flow with \"placed order\" trigger this means that the customer that will placed an order with enter the segment. Their main problem is the customer mentioned that the TAGS stopped working for a month now until now.",
@@ -1616,7 +1607,7 @@
       "category": "Flows",
       "message_ts": "1782449536.032039",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782449536032039",
-      "category_reclassified_reason": "'Sign Up Discount Flow' welcome email was delayed/skipped due to Smart Sending and invalid email addresses — a flow delivery/filter issue."
+      "category_reclassified_reason": "'Sign Up Discount Flow' welcome email was delayed/skipped due to Smart Sending and invalid email addresses \u2014 a flow delivery/filter issue."
     },
     {
       "date": "2026-06-26",
@@ -1639,7 +1630,7 @@
       "category": "Billing & Account",
       "message_ts": "1782459344.294609",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782459344294609",
-      "category_reclassified_reason": "Customer disputes a bank charge from Klaviyo after account cancellation — a billing issue."
+      "category_reclassified_reason": "Customer disputes a bank charge from Klaviyo after account cancellation \u2014 a billing issue."
     },
     {
       "date": "2026-06-26",
@@ -1677,7 +1668,7 @@
     {
       "date": "2026-06-29",
       "time": "11:34:55",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4041563",
       "tldr": "Customer's TAGS (custom property) stopped working for month now.",
@@ -1717,7 +1708,7 @@
       "category": "Flows",
       "message_ts": "1782698281.244449",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782698281244449",
-      "category_reclassified_reason": "{{ event.extra.checkout_url }} button redirecting to home page instead of checkout — a flow-email dynamic-variable/behavior issue in an Abandoned Checkout flow."
+      "category_reclassified_reason": "{{ event.extra.checkout_url }} button redirecting to home page instead of checkout \u2014 a flow-email dynamic-variable/behavior issue in an Abandoned Checkout flow."
     },
     {
       "date": "2026-06-29",
@@ -1762,7 +1753,7 @@
       "category": "Integrations",
       "message_ts": "1782699753.421449",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782699753421449",
-      "category_reclassified_reason": "'Please install the Klaviyo app in Toast first' error — a Toast POS integration setup issue."
+      "category_reclassified_reason": "'Please install the Klaviyo app in Toast first' error \u2014 a Toast POS integration setup issue."
     },
     {
       "date": "2026-06-29",
@@ -1889,7 +1880,7 @@
     {
       "date": "2026-06-29",
       "time": "14:11:11",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4045070",
       "tldr": "Customer need help with setting up custom property (boolean)",
@@ -1962,7 +1953,7 @@
       "category": "Billing & Account",
       "message_ts": "1782714488.495999",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782714488495999",
-      "category_reclassified_reason": "Customer needs to update the phone number tied to SMS MFA (2FA) on the account — account security/access, later escalated to S&L Pod for ownership verification."
+      "category_reclassified_reason": "Customer needs to update the phone number tied to SMS MFA (2FA) on the account \u2014 account security/access, later escalated to S&L Pod for ownership verification."
     },
     {
       "date": "2026-06-29",
@@ -2041,7 +2032,7 @@
       "category": "Billing & Account",
       "message_ts": "1782718438.349269",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782718438349269",
-      "category_reclassified_reason": "Request to change the account Owner role after losing access to an agency-controlled account — account ownership/access."
+      "category_reclassified_reason": "Request to change the account Owner role after losing access to an agency-controlled account \u2014 account ownership/access."
     },
     {
       "date": "2026-06-29",
@@ -2090,7 +2081,7 @@
     {
       "date": "2026-06-30",
       "time": "12:33:04",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4037888",
       "tldr": "Customer is still having issue with customer's being skipped on their Abandoned Checkout flow.",
@@ -2231,7 +2222,7 @@
       "category": "Flows",
       "message_ts": "1782791759.607339",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782791759607339",
-      "category_reclassified_reason": "Abandoned Cart flow email's HTML block wasn't looping through multiple line items ({% for item in event.extra.line_items %}) — a flow email templating issue."
+      "category_reclassified_reason": "Abandoned Cart flow email's HTML block wasn't looping through multiple line items ({% for item in event.extra.line_items %}) \u2014 a flow email templating issue."
     },
     {
       "date": "2026-06-30",
@@ -2380,7 +2371,7 @@
     {
       "date": "2026-06-30",
       "time": "17:43:44",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4047705",
       "tldr": "Customer's is having issue with their LOC profile custom property. When they add LOC doesn't equal en-ca from their segment engaged en-us (120 days), it goes down to 101,906. However, the LOC equals en-ca all segment only consist of 846.  Also, 2 profiles receive a US email even if their custom property is set to en-ca not en-us.",
@@ -2487,7 +2478,7 @@
       "message_ts": "1782871608.146169",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782871608146169",
       "zendesk_productarea": "Catalogs & Feeds::Back In Stock::Back in Stock Report",
-      "category_reclassified_reason": "productarea is 'Catalogs & Feeds::Back In Stock::...' (not literally 'Flows::') but customerselectedproductarea is 'Flows' and the ticket is specifically about adding subscribers into a pending Back In Stock flow — an automated/triggered email logic feature — so this is classified as Flows (flagged as somewhat uncertain given the productarea/customerselectedproductarea mismatch)."
+      "category_reclassified_reason": "productarea is 'Catalogs & Feeds::Back In Stock::...' (not literally 'Flows::') but customerselectedproductarea is 'Flows' and the ticket is specifically about adding subscribers into a pending Back In Stock flow \u2014 an automated/triggered email logic feature \u2014 so this is classified as Flows (flagged as somewhat uncertain given the productarea/customerselectedproductarea mismatch)."
     },
     {
       "date": "2026-07-01",
@@ -2526,10 +2517,10 @@
     {
       "date": "2026-07-01",
       "time": "12:23:37",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4047705",
-      "tldr": "Customer's is having issue with their LOC profile custom property. When they add LOC doesn't equal en-ca from their segment engaged en-us (120 days), it goes down to 101,906. However, the LOC equals en-ca all segment only consist of 846. Meaning the list count should be 179,873 - 846 = 179,027.  Also, 2 profiles receive a US email even if their custom property is set to en-ca not en-us.",
+      "tldr": "Customer's is having issue with their LOC profile custom property. When they add LOC doesn't equal en-ca from their segment engaged en-us (120 days), it goes down to 101,906. However, the LOC equals en-ca all segment only consist of 846. Meaning the list count should be 179,873 - 846 = 179,027.\u00a0 Also, 2 profiles receive a US email even if their custom property is set to en-ca not en-us.",
       "category": "Segmentation & Lists",
       "message_ts": "1782872617.694699",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782872617694699"
@@ -2808,12 +2799,12 @@
       "category": "Campaigns",
       "message_ts": "1782890315.365309",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782890315365309",
-      "category_reclassified_reason": "Personalization variables not rendering correctly in a cloned campaign's preview mode — a campaign template/editor rendering issue."
+      "category_reclassified_reason": "Personalization variables not rendering correctly in a cloned campaign's preview mode \u2014 a campaign template/editor rendering issue."
     },
     {
       "date": "2026-07-01",
       "time": "18:01:02",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4049845",
       "tldr": "Customer contacted regarding one of their segment appears spammy with profiles signup on march 19 with timestamp of may 19, 2026, 8:49 AM. They want to know how to check this and how automatically add list of profile from the segment to their main list.",
@@ -2853,7 +2844,7 @@
       "category": "Campaigns",
       "message_ts": "1782955890.138639",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782955890138639",
-      "category_reclassified_reason": "Discussion resolved around the Preview & Test email send / [Test] subject-line prefix feature — a campaign test-send topic."
+      "category_reclassified_reason": "Discussion resolved around the Preview & Test email send / [Test] subject-line prefix feature \u2014 a campaign test-send topic."
     },
     {
       "date": "2026-07-02",
@@ -2916,7 +2907,7 @@
       "user": "Kent Jayson Reteo",
       "user_id": "U0B2G0XE5B7",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4051023",
-      "tldr": "CX is now working with \"Segment\" as their middle platform to help us track when customer who click thru from a Klaviyo email complete a purchase on our online ordering page  Has concerns about the ff:  1. Creating the order event metrics with the exact names required by Segment: “Order Completed” and “Ordered Product.” These names must match exactly for the events to track correctly in Segment.  2. Confirming that Klaviyo is properly configured to send these order events to Segment when a purchase is completed, including the customer’s email address. This is important so it can match the order to the correct customer profile and campaign.",
+      "tldr": "CX is now working with \"Segment\" as their middle platform to help us track when customer who click thru from a Klaviyo email complete a purchase on our online ordering page  Has concerns about the ff:  1. Creating the order event metrics with the exact names required by Segment: \u201cOrder Completed\u201d and \u201cOrdered Product.\u201d These names must match exactly for the events to track correctly in Segment.  2. Confirming that Klaviyo is properly configured to send these order events to Segment when a purchase is completed, including the customer\u2019s email address. This is important so it can match the order to the correct customer profile and campaign.",
       "category": "Segmentation & Lists",
       "message_ts": "1782957699.007039",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1782957699007039"
@@ -2924,7 +2915,7 @@
     {
       "date": "2026-07-02",
       "time": "12:03:54",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4049845",
       "tldr": "Customer know how to make sure that their new subscriber that came from import list is added to their Master list.",
@@ -3012,7 +3003,7 @@
     {
       "date": "2026-07-02",
       "time": "12:45:09",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4051586",
       "tldr": "Customer want to change their universal footer's 'unsubscribe' personalized text block to color black (Hex #000000)",
@@ -3285,7 +3276,7 @@
       "message_ts": "1783046140.021859",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1783046140021859",
       "zendesk_productarea": "Campaigns::Other",
-      "category_reclassified_reason": "productarea is 'Campaigns::Other' — a weird redirect link issue traced to a recently sent campaign, a direct Campaigns match."
+      "category_reclassified_reason": "productarea is 'Campaigns::Other' \u2014 a weird redirect link issue traced to a recently sent campaign, a direct Campaigns match."
     },
     {
       "date": "2026-07-03",
@@ -3342,12 +3333,12 @@
       "category": "Profiles & Subscription Status",
       "message_ts": "1783047375.566769",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1783047375566769",
-      "category_reclassified_reason": "Customer confused why an unsubscribed contact still receives email; agent checked for 'implicit consent' — a subscription-status question."
+      "category_reclassified_reason": "Customer confused why an unsubscribed contact still receives email; agent checked for 'implicit consent' \u2014 a subscription-status question."
     },
     {
       "date": "2026-07-03",
       "time": "13:02:42",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4053466",
       "tldr": "Customer kept getting an error message when trying to sync Shopify after they update preferences in Klaviyo and selecting the \"Update Settings\".  They already tried different browser, re-installing, go on incognito mode some other AI suggestion but none of them works. Their emails from shopify page is not syncing into their Klaviyo list.",
@@ -3365,6 +3356,17 @@
       "category": "Flows",
       "message_ts": "1783049159.329809",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1783049159329809"
+    },
+    {
+      "date": "2026-07-03",
+      "time": "13:29:57",
+      "user": "Frank Gehry Ruz",
+      "user_id": "U0B23U23U0P",
+      "ticket_url": null,
+      "tldr": "cx having issue about shift+ enter and enter",
+      "category": "Other",
+      "message_ts": null,
+      "slack_permalink": null
     },
     {
       "date": "2026-07-03",
@@ -3435,7 +3437,7 @@
     {
       "date": "2026-07-03",
       "time": "14:24:59",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4054043",
       "tldr": "Customer need help with integrating their Shopify with Klaviyo.",
@@ -3523,7 +3525,7 @@
     {
       "date": "2026-07-03",
       "time": "16:25:41",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4054043",
       "tldr": "Customer is having a concern regarding integrating Shopify and Klaviyo. Customer already reach out to Shopify support and they confirmed that root cause might comes on Klaviyo's end since their plan in Shopify and password protection is enabled.",
@@ -3784,7 +3786,7 @@
       "category": "Profiles & Subscription Status",
       "message_ts": "1783305201.521219",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1783305201521219",
-      "category_reclassified_reason": "Thread identifies the email as a double opt-in confirmation tied to list-level Subscribe & Preference Page/DOI settings (not a flow) — a subscription-status topic."
+      "category_reclassified_reason": "Thread identifies the email as a double opt-in confirmation tied to list-level Subscribe & Preference Page/DOI settings (not a flow) \u2014 a subscription-status topic."
     },
     {
       "date": "2026-07-06",
@@ -3800,7 +3802,7 @@
     {
       "date": "2026-07-06",
       "time": "12:57:06",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4056275",
       "tldr": "They recently created a flow to include texts (SMS message). The customer said they're seeing texts is not included. They received permission for all of the phone number in their full email list. But they're confuse why most of the profile goes 'No' in their conditional split.",
@@ -3862,7 +3864,7 @@
       "category": "Segmentation & Lists",
       "message_ts": "1783319639.256849",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1783319639256849",
-      "category_reclassified_reason": "Thread walks through building a segment (Subscribed to List, filtered by date and Shopify-integration source) to exclude a bulk consent-sync spike — a segment-building issue."
+      "category_reclassified_reason": "Thread walks through building a segment (Subscribed to List, filtered by date and Shopify-integration source) to exclude a bulk consent-sync spike \u2014 a segment-building issue."
     },
     {
       "date": "2026-07-06",
@@ -3907,7 +3909,7 @@
       "category": "Billing & Account",
       "message_ts": "1783388240.426569",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1783388240426569",
-      "category_reclassified_reason": "Involves resetting/changing MFA (2FA) phone number access via the 'disable MFA Initial Response' macro — an account security/access topic."
+      "category_reclassified_reason": "Involves resetting/changing MFA (2FA) phone number access via the 'disable MFA Initial Response' macro \u2014 an account security/access topic."
     },
     {
       "date": "2026-07-07",
@@ -3952,7 +3954,7 @@
       "category": "Forms & Sign-ups",
       "message_ts": "1783390451.471779",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1783390451471779",
-      "category_reclassified_reason": "29-reply thread confirms a CSS issue with an 'Exit intent' popup sign-up form's close button being clipped on mobile, plus two overlapping onsite forms — a forms/pop-up issue."
+      "category_reclassified_reason": "29-reply thread confirms a CSS issue with an 'Exit intent' popup sign-up form's close button being clipped on mobile, plus two overlapping onsite forms \u2014 a forms/pop-up issue."
     },
     {
       "date": "2026-07-07",
@@ -4012,7 +4014,7 @@
     {
       "date": "2026-07-07",
       "time": "13:01:54",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4053466",
       "tldr": "They already reinstalled the app as per Shopify support recommendation. since they had it checked on their end and it seems good but they're still having issue with the email address added to their Shopify page and it's not syncing.",
@@ -4026,7 +4028,7 @@
       "user": "Caizen Dee Kabigting",
       "user_id": "U0B23BVFD8F",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4058612",
-      "tldr": "after integrating the Basecomp the customer three test flows using Klaviyo Product Blocks are working inconsistently: some events include the required product data, such as the product image, while others do not. Additionally, the Product Blocks in your Added to Cart and Started Checkout flows currently aren’t receiving the trigger data needed to populate product information.",
+      "tldr": "after integrating the Basecomp the customer three test flows using Klaviyo Product Blocks are working inconsistently: some events include the required product data, such as the product image, while others do not. Additionally, the Product Blocks in your Added to Cart and Started Checkout flows currently aren\u2019t receiving the trigger data needed to populate product information.",
       "category": "Integrations",
       "message_ts": "1783394688.526979",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1783394688526979"
@@ -4089,7 +4091,7 @@
     {
       "date": "2026-07-07",
       "time": "13:59:10",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4058920",
       "tldr": "The customer want their footer's website address url to start with www. instead of http:/www. They want to remove it from the start of the website button.",
@@ -4313,7 +4315,7 @@
     {
       "date": "2026-07-08",
       "time": "11:46:55",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060469",
       "tldr": "They were unable to create Google Ads Audience from their Klaviyo List. When attempting to do it, they receive a following error message: \"Unable to create audience. Check your Google Ads permissions and re-autheticate\". They already verified the following setup requirements on their end: Admin permission and Klaviyo Manger Link. Already checked that it was successfully linked but they said it's still failing. They want to know if there's an issue on Klaviyo side that's preventing the audience write action.",
@@ -4522,10 +4524,10 @@
     {
       "date": "2026-07-08",
       "time": "14:20:35",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060289",
-      "tldr": "They receive complain today from one of their customer and one employee that their email were addressed to the wrong name \"Melissa Montañez\".",
+      "tldr": "They receive complain today from one of their customer and one employee that their email were addressed to the wrong name \"Melissa Monta\u00f1ez\".",
       "category": "Profiles & Subscription Status",
       "message_ts": "1783484435.716589",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1783484435716589"
@@ -4613,7 +4615,7 @@
       "user": "Ronald Flores",
       "user_id": "U0B23BZNBHV",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060557",
-      "tldr": "The customer reports that while the 'Engaged Website Visitor - Last 30 Days' segment is syncing correctly to Google Ads, two other audiences—'90 Day Engaged - Email' and 'OpenSend List'—have not received API uploads since June 30 and May 11, respectively, despite audience sync being active.",
+      "tldr": "The customer reports that while the 'Engaged Website Visitor - Last 30 Days' segment is syncing correctly to Google Ads, two other audiences\u2014'90 Day Engaged - Email' and 'OpenSend List'\u2014have not received API uploads since June 30 and May 11, respectively, despite audience sync being active.",
       "category": "Integrations",
       "message_ts": "1783492156.891949",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1783492156891949"
@@ -4775,7 +4777,7 @@
     {
       "date": "2026-07-09",
       "time": "12:06:38",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4060839",
       "tldr": "Customer accidentally deleted an imported list. Since the then the imported profiles from the list no longer appear to any of their list or segments. And the overall audience count is still significantly higher than it should be but those profile is still included in the total audience number. They want to know how they can remove contacts from the total audience they still being included. They confirmed that he deleted list on June 24 was named Bella's Rewards Imports.",
@@ -4841,7 +4843,7 @@
     {
       "date": "2026-07-09",
       "time": "12:34:57",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4062209",
       "tldr": "They cannot see any of their conversion in their flows even if they did the setup correctly. Ask how attribution work and how they can send webhook whenever someone opened an email.",
@@ -5072,7 +5074,7 @@
     {
       "date": "2026-07-09",
       "time": "16:48:30",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4062412",
       "tldr": "They are wondering why an specific profile that's on the list (CCUFSA 2026) receives an email even though the list they're in isn't part of the audience of a campaign they receive on July 7, 2026.",
@@ -5298,7 +5300,7 @@
     {
       "date": "2026-07-10",
       "time": "13:46:56",
-      "user": "Niña Jenica Custodio",
+      "user": "Ni\u00f1a Jenica Custodio",
       "user_id": "U0B2DBDEX0B",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4063200",
       "tldr": "They're having issue with their 10k profile that's the external ID is to the Klaviyo ID and they also has couple thousand of existing profiles updated and replaced the external ID with Klaviyo ID that disrupted some of their Marketing Process. Also, when they go to export a segment to CSV, \"External ID\" appears twice in the list.",
@@ -5416,7 +5418,7 @@
       "category": "Forms & Sign-ups",
       "message_ts": "1783667041.567699",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1783667041567699",
-      "category_reclassified_reason": "Full thread: customer's custom CSS ('h5 { margin-bottom: 5px; }') was not saving on an onsite form block ('loyalty-custom-1'); PE advised testing on a cloned blank form and escalating if needed — a form-builder/editor CSS issue."
+      "category_reclassified_reason": "Full thread: customer's custom CSS ('h5 { margin-bottom: 5px; }') was not saving on an onsite form block ('loyalty-custom-1'); PE advised testing on a cloned blank form and escalating if needed \u2014 a form-builder/editor CSS issue."
     },
     {
       "date": "2026-07-10",
@@ -5765,7 +5767,7 @@
       "user": "Luis Gabriel De taza",
       "user_id": "U0B2NKJ78KE",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4084278",
-      "tldr": "The customer reports two urgent issues: a significant drop in email open rates from their usual 50–57% to around 25–32% across three campaigns on 07/21, despite no changes to their sending domain, audience, or authentication settings; and a delay in campaign dashboard reporting where campaigns remain in \"sending\" status with no visible metrics, though individual campaign views show order data. They request investigation into possible deliverability problems, domain/IP reputation changes, platform-wide tracking issues, and confirmation on the reliability of order data despite dashboard delays. They seek prompt resolution to safely proceed with upcoming campaigns.",
+      "tldr": "The customer reports two urgent issues: a significant drop in email open rates from their usual 50\u201357% to around 25\u201332% across three campaigns on 07/21, despite no changes to their sending domain, audience, or authentication settings; and a delay in campaign dashboard reporting where campaigns remain in \"sending\" status with no visible metrics, though individual campaign views show order data. They request investigation into possible deliverability problems, domain/IP reputation changes, platform-wide tracking issues, and confirmation on the reliability of order data despite dashboard delays. They seek prompt resolution to safely proceed with upcoming campaigns.",
       "category": "Deliverability & Bounces",
       "message_ts": "1784672986.349529",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1784672986349529"
@@ -5773,7 +5775,7 @@
     {
       "date": "2026-07-22",
       "time": "09:16:03",
-      "user": "Clarence Español",
+      "user": "Clarence Espa\u00f1ol",
       "user_id": "U0B2FT2PUN9",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4082556",
       "tldr": "The customer reported that the AI assistance (sparkle) option is no longer visible in their email sections.",
@@ -5872,7 +5874,7 @@
     {
       "date": "2026-07-23",
       "time": "11:03:00",
-      "user": "Clarence Español",
+      "user": "Clarence Espa\u00f1ol",
       "user_id": "U0B2FT2PUN9",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4086805",
       "tldr": "The customer inquires about the permissibility of including affiliate tracking parameters in links within their Klaviyo marketing emails for their own Shopify store products. They want to track commissions on sales attributed to their affiliates and clarify that this is not for third-party product promotion. They seek confirmation on whether this practice complies with relevant regulations.",
@@ -5883,7 +5885,7 @@
     {
       "date": "2026-07-23",
       "time": "11:41:23",
-      "user": "Clarence Español",
+      "user": "Clarence Espa\u00f1ol",
       "user_id": "U0B2FT2PUN9",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4080561",
       "tldr": "The customer having problem with birthday flow and seem like it's sending or generating revenue. Customer already tried the previous PE gave resolution to the customer however the birthday still not working.",
@@ -5927,7 +5929,7 @@
     {
       "date": "2026-07-24",
       "time": "08:38:55",
-      "user": "Clarence Español",
+      "user": "Clarence Espa\u00f1ol",
       "user_id": "U0B2FT2PUN9",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4088938",
       "tldr": "The customer reported an issue with a quiz on the Klaviyo Practitioner Certificate course, specifically the \"Build and Customize Your Sign-Up Forms\" lesson. They indicated that the quiz marked their correct answers as wrong, suggesting a potential error in the quiz answer key. The customer warned that others might encounter the same problem.",
@@ -5982,7 +5984,7 @@
     {
       "date": "2026-07-24",
       "time": "10:45:33",
-      "user": "Clarence Español",
+      "user": "Clarence Espa\u00f1ol",
       "user_id": "U0B2FT2PUN9",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4089041",
       "tldr": "The customer's Klaviyo account is suspended due to a failed payment. They have updated their payment details and manually retried the payment twice, but the account remains suspended.",
@@ -6040,7 +6042,7 @@
       "user": "Ronald Flores",
       "user_id": "U0B23BZNBHV",
       "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4093791",
-      "tldr": "The customer reports that only one of their four flows (the Win-back flow) is visible in the Flows overview, while the other three flows—created via the onboarding wizard with default names and in draft status—do not appear despite filters set to show all and page refreshes. They have confirmed all flows exist via the Klaviyo chatbot. The customer suspects the issue may relate to the flows' default names or origin and requests an explanation for the missing flows in the overview and assistance to make them visible or rename them.",
+      "tldr": "The customer reports that only one of their four flows (the Win-back flow) is visible in the Flows overview, while the other three flows\u2014created via the onboarding wizard with default names and in draft status\u2014do not appear despite filters set to show all and page refreshes. They have confirmed all flows exist via the Klaviyo chatbot. The customer suspects the issue may relate to the flows' default names or origin and requests an explanation for the missing flows in the overview and assistance to make them visible or rename them.",
       "category": "Flows",
       "message_ts": "1785192282.619649",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785192282619649"
@@ -6088,6 +6090,127 @@
       "category": "Domains & DNS",
       "message_ts": "1785460515.803299",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785460515803299"
+    },
+    {
+      "date": "2026-08-03",
+      "time": "10:10:38",
+      "user": "Deonet Roman Ong",
+      "user_id": "U0B2CDEER5H",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4103033",
+      "tldr": "Event variable not working with the dynamic table block",
+      "category": "Flows",
+      "message_ts": "1785715838.788199",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785715838788199"
+    },
+    {
+      "date": "2026-08-03",
+      "time": "10:30:15",
+      "user": "Ryan Baking",
+      "user_id": "U0B2CMJ6CUB",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4103053",
+      "tldr": "Customer links in the campaign render a 404 error message but the item they are linking is existing on the website.",
+      "category": "Campaigns",
+      "message_ts": "1785717015.601959",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785717015601959"
+    },
+    {
+      "date": "2026-08-03",
+      "time": "11:14:14",
+      "user": "Deonet Roman Ong",
+      "user_id": "U0B2CDEER5H",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4102937",
+      "tldr": "Date Triggered Flow not firing.",
+      "category": "Flows",
+      "message_ts": "1785719654.477639",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785719654477639"
+    },
+    {
+      "date": "2026-08-03",
+      "time": "11:38:32",
+      "user": "Emmanuel Diaz",
+      "user_id": "U0B2GPYFV2S",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4102982",
+      "tldr": "Customer has sign up form that has multi step but in their flow, the email that is being sent is automatically on the \"Everyone\" else section",
+      "category": "Forms & Sign-ups",
+      "message_ts": "1785721112.200579",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785721112200579"
+    },
+    {
+      "date": "2026-08-03",
+      "time": "12:11:39",
+      "user": "Rafael Joseph Rayco",
+      "user_id": "U0B2N8U7NEQ",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4103121",
+      "tldr": "Customer is encountering an error message as soon as when they click Custom reports.",
+      "category": "Other",
+      "message_ts": "1785723099.796499",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785723099796499"
+    },
+    {
+      "date": "2026-08-03",
+      "time": "13:15:13",
+      "user": "Rafael Joseph Rayco",
+      "user_id": "U0B2N8U7NEQ",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4103150",
+      "tldr": "The customer wants to see how many profiles have upgraded or cancelled their subscription from an email they sent.",
+      "category": "Campaigns",
+      "message_ts": "1785726913.102029",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785726913102029"
+    },
+    {
+      "date": "2026-08-03",
+      "time": "14:09:20",
+      "user": "Deonet Roman Ong",
+      "user_id": "U0B2CDEER5H",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4103138",
+      "tldr": "when assigning email address for RCS registration this error appear \"Cannot use the same email as the agent.\"",
+      "category": "SMS & Consent",
+      "message_ts": "1785730160.687019",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785730160687019"
+    },
+    {
+      "date": "2026-08-03",
+      "time": "15:39:34",
+      "user": "Ryan Baking",
+      "user_id": "U0B2CMJ6CUB",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4103218",
+      "tldr": "Customer goal was to pull the price and compared at price value from the catalogue and to ouput the discount",
+      "category": "Integrations",
+      "message_ts": "1785735574.404809",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785735574404809"
+    },
+    {
+      "date": "2026-08-03",
+      "time": "15:56:00",
+      "user": "Rafael Joseph Rayco",
+      "user_id": "U0B2N8U7NEQ",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4103242",
+      "tldr": "Customer reported that some of their profiles are getting spammed by double opt-in emails.",
+      "category": "Segmentation & Lists",
+      "message_ts": "1785736560.178409",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785736560178409"
+    },
+    {
+      "date": "2026-08-04",
+      "time": "06:58:09",
+      "user": "Marvin August Claros",
+      "user_id": "U0B23KNT4KH",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4104910",
+      "tldr": "Can we show different prices for retailers and wholesalers?",
+      "category": "Flows",
+      "message_ts": "1785790689.555609",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785790689555609"
+    },
+    {
+      "date": "2026-08-04",
+      "time": "08:59:56",
+      "user": "Deonet Roman Ong",
+      "user_id": "U0B2CDEER5H",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4104435",
+      "tldr": "Exclusion sources tab in the email subscribers show 7010,7020 and 7040 sources. which according to google are from SMS, this account does not have SMS",
+      "category": "Profiles & Subscription Status",
+      "message_ts": "1785797996.689219",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1785797996689219"
     }
   ]
 }
