@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-20T05:23:27.129Z",
+  "generated_at": "2026-09-04T00:04:05.878Z",
   "date_range": {
     "start": "2026-06-22",
-    "end": "2026-08-20"
+    "end": "2026-09-04"
   },
-  "last_message_ts": 1787187317.758569,
-  "total_count": 585,
+  "last_message_ts": 1788476637.954179,
+  "total_count": 586,
   "daily_counts": {
     "2026-06-22": 30,
     "2026-06-23": 34,
@@ -50,7 +50,18 @@
     "2026-08-17": 4,
     "2026-08-18": 0,
     "2026-08-19": 0,
-    "2026-08-20": 1
+    "2026-08-20": 1,
+    "2026-08-21": 0,
+    "2026-08-24": 0,
+    "2026-08-25": 0,
+    "2026-08-26": 0,
+    "2026-08-27": 0,
+    "2026-08-28": 0,
+    "2026-08-31": 0,
+    "2026-09-01": 0,
+    "2026-09-02": 0,
+    "2026-09-03": 0,
+    "2026-09-04": 1
   },
   "user_counts": {
     "Rafael Joseph Rayco": 44,
@@ -70,9 +81,9 @@
     "John Patrick Lopez": 18,
     "Frank Gehry Ruz": 17,
     "Erwin Eleuterio": 17,
+    "Deonet Roman Ong": 14,
     "Ryan Baking": 13,
     "Lou Elaizha Mars Maguddayao": 13,
-    "Deonet Roman Ong": 13,
     "Justine Angelo Rivera": 12,
     "Marvin August Claros": 12,
     "Ronel Albo": 11,
@@ -89,7 +100,7 @@
     "Keon Carl Jordan Reyes": 1
   },
   "category_counts": {
-    "Flows": 126,
+    "Flows": 127,
     "Integrations": 95,
     "Profiles & Subscription Status": 65,
     "Campaigns": 64,
@@ -6607,6 +6618,17 @@
       "category": "Segmentation & Lists",
       "message_ts": "1787187317.758569",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1787187317758569"
+    },
+    {
+      "date": "2026-09-04",
+      "time": "07:03:57",
+      "user": "Deonet Roman Ong",
+      "user_id": "U0B2CDEER5H",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4160662",
+      "tldr": "The customer wants to know whether Klaviyo can natively replace their third-party \"Drop a Hint\" button, allowing a visitor to send a product to someone else who would then receive a personalized Klaviyo flow email saying that someone is interested in the product.",
+      "category": "Flows",
+      "message_ts": "1788476637.954179",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1788476637954179"
     }
   ]
 }
