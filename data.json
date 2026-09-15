@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-08T00:03:15.847994Z",
+  "generated_at": "2026-09-15T00:04:31.020871Z",
   "date_range": {
     "start": "2026-06-22",
-    "end": "2026-09-08"
+    "end": "2026-09-14"
   },
-  "last_message_ts": 1788823141.502909,
-  "total_count": 587,
+  "last_message_ts": 1789359063.777259,
+  "total_count": 588,
   "daily_counts": {
     "2026-06-22": 30,
     "2026-06-23": 34,
@@ -63,7 +63,11 @@
     "2026-09-03": 0,
     "2026-09-04": 1,
     "2026-09-07": 0,
-    "2026-09-08": 1
+    "2026-09-08": 1,
+    "2026-09-09": 0,
+    "2026-09-10": 0,
+    "2026-09-11": 0,
+    "2026-09-14": 1
   },
   "user_counts": {
     "Rafael Joseph Rayco": 44,
@@ -83,7 +87,7 @@
     "John Patrick Lopez": 18,
     "Frank Gehry Ruz": 17,
     "Erwin Eleuterio": 17,
-    "Deonet Roman Ong": 15,
+    "Deonet Roman Ong": 16,
     "Ryan Baking": 13,
     "Lou Elaizha Mars Maguddayao": 13,
     "Justine Angelo Rivera": 12,
@@ -104,7 +108,7 @@
   "category_counts": {
     "Integrations": 95,
     "Other": 24,
-    "Forms & Sign-ups": 54,
+    "Forms & Sign-ups": 55,
     "Domains & DNS": 14,
     "Deliverability & Bounces": 22,
     "Campaigns": 64,
@@ -6642,6 +6646,17 @@
       "category": "Forms & Sign-ups",
       "message_ts": "1788823141.502909",
       "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1788823141502909"
+    },
+    {
+      "date": "2026-09-14",
+      "time": "12:11:03",
+      "user": "Deonet Roman Ong",
+      "user_id": "U0B2CDEER5H",
+      "ticket_url": "https://klaviyo.zendesk.com/agent/tickets/4169521",
+      "tldr": "The customer reports that a Klaviyo embedded form on a specific therapy-guide page often fails to load in regular browsers but appears in incognito, affecting both returning and first-time visitors and generating recurring support complaints. Elle initially suggested cookies, ad blockers, CSS, or SPA behavior and requested a recording. Access issues prevented review.The customer asks whether cookies could be the underlying cause for many visitors.",
+      "category": "Forms & Sign-ups",
+      "message_ts": "1789359063.777259",
+      "slack_permalink": "https://klaviyo.enterprise.slack.com/archives/C0AFYG5RAUB/p1789359063777259"
     }
   ]
 }
