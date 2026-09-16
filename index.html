@@ -292,7 +292,7 @@ function renderCharts(data) {
   categoryLabelsInOrder = catEntries.map(e => e[0]);
   const catTotal = catEntries.reduce((sum, e) => sum + e[1], 0);
   categoryChartInstance = new Chart(document.getElementById('categoryChart'), {
-    type: 'doughnut',
+    type: 'pie',
     data: {
       labels: categoryLabelsInOrder,
       datasets: [{ data: catEntries.map(e => e[1]), backgroundColor: CATEGORY_PALETTE }]
@@ -300,7 +300,6 @@ function renderCharts(data) {
     options: {
       layout: { padding: 0 },
       radius: '96%',
-      cutout: '55%',
       plugins: {
         legend: {
           position: 'right',
